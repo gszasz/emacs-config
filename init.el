@@ -138,16 +138,6 @@
 (global-set-key [(control insert)] 'clipboard-kill-ring-save)
 (global-set-key [(shift insert)] 'clipboard-yank)
 
-;; ------------
-;; magit modes
-;; ------------
-; I will not use magit for a while for educational reasons
-;(require 'magit)
-;(global-set-key (kbd "C-x g") 'magit-status)
-;(add-hook 'magit-log-edit-mode-hook
-;          (lambda () (set-fill-column 72)
-;            (fci-mode 1)))
-
 ;; ----------------
 ;; Git commit mode
 ;; ----------------
@@ -156,6 +146,15 @@
           (lambda () (set-fill-column 72)
             (fci-mode 1)
             (turn-on-auto-fill)))
+
+;; -----------
+;; magit mode
+;; -----------
+(require 'magit)
+(global-set-key (kbd "C-x g") 'magit-status)
+(add-hook 'magit-log-edit-mode-hook
+          (lambda () (set-fill-column 72)
+            (fci-mode 1)))
 
 ;; ------------------
 ;; Visual rectangles
