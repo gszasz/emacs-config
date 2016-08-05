@@ -12,3 +12,6 @@ thumbs
 
 # tramp connection history
 tramp
+
+# backup files
+*~
