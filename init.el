@@ -143,8 +143,8 @@
 (require 'git-commit)
 (add-hook 'git-commit-mode-hook
           (lambda () (set-fill-column 72)
-            (fci-mode 1)
-            (turn-on-auto-fill)))
+            (auto-fill-mode 1)
+            (fci-mode 1)))
 
 ;; -----------
 ;; magit mode
