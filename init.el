@@ -55,10 +55,12 @@
 ;; -----------------------
 ;;  Set line highlighting
 ;; -----------------------
-(require 'hl-line+)
-;(toggle-hl-line-when-idle 1)
-(global-hl-line-mode t)
-(setq hl-line-inhibit-highlighting-for-modes (quote (Info-mode help-mode custom-mode view-mode term-mode shell-mode eshell-mode magit-status-mode calendar-mode)))
+(when (display-graphic-p)
+  (require 'hl-line+)
+  ;(toggle-hl-line-when-idle 1)
+  (global-hl-line-mode t)
+  (setq hl-line-inhibit-highlighting-for-modes (quote (Info-mode help-mode custom-mode view-mode term-mode shell-mode eshell-mode magit-status-mode calendar-mode))))
+
 
 ;; -----------------------
 ;;  Fill column indicator
