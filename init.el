@@ -107,6 +107,7 @@
 ;; To use abbrev-mode, add lines like this:
 (add-hook 'php-mode-hook 
           (lambda () (define-abbrev php-mode-abbrev-table "ex" "extends")
+             (auto-fill-mode -1)
              (fci-mode 1)))
 
 ;; -------------------------------
@@ -114,6 +115,8 @@
 ;; -------------------------------
 (autoload 'gfm-mode "markdown-mode" "Major mode for editing GitHub Flavored Markdown files" t)
 (add-to-list 'auto-mode-alist '("README\\.md\\'" . gfm-mode))
+(add-hook 'gfm-mode-hook 
+          (lambda () (fci-mode 1)))
 
 ;; -----------------------------------------
 ;;  Turn off linum-mode in some major modes
@@ -153,6 +156,7 @@
 (global-set-key (kbd "C-x g") 'magit-status)
 (add-hook 'magit-log-edit-mode-hook
           (lambda () (set-fill-column 72)
+            (auto-fill-mode 1)
             (fci-mode 1)))
 
 ;; ------------------
