@@ -102,14 +102,15 @@
 (elpy-enable)
 
 ;; -----------
-;; PHP Mode
+;;  PHP Mode
 ;; -----------
-(require 'php-mode)
-;; To use abbrev-mode, add lines like this:
-(add-hook 'php-mode-hook 
-          (lambda () (define-abbrev php-mode-abbrev-table "ex" "extends")
-             (auto-fill-mode -1)
-             (fci-mode 1)))
+(when (featurep 'php-mode)
+  (require 'php-mode)
+  ;; To use abbrev-mode, add lines like this:
+  (add-hook 'php-mode-hook 
+            (lambda () (define-abbrev php-mode-abbrev-table "ex" "extends")
+              (auto-fill-mode -1)
+              (fci-mode 1))))
 
 ;; -------------------------------
 ;;  GitHub Flavored Markdown Mode
@@ -128,11 +129,12 @@
 ;; ------------
 ;; AUCTeX mode
 ;; ------------
-(require 'tex)
-(TeX-global-PDF-mode t)
-(add-hook 'LaTeX-mode-hook 
-          (lambda ()  (auto-fill-mode -1)
-            (fci-mode 1)))
+(when (featurep 'tex)
+  (require 'tex)
+  (TeX-global-PDF-mode t)
+  (add-hook 'LaTeX-mode-hook 
+            (lambda ()  (auto-fill-mode -1)
+              (fci-mode 1))))
 
 ;; ----------------------------------------
 ;; Define keys for global clipboard access
@@ -153,12 +155,13 @@
 ;; -----------
 ;; magit mode
 ;; -----------
-(require 'magit)
-(global-set-key (kbd "C-x g") 'magit-status)
-(add-hook 'magit-log-edit-mode-hook
-          (lambda () (set-fill-column 72)
-            (auto-fill-mode 1)
-            (fci-mode 1)))
+(when (featurep 'magit)
+  (require 'magit)
+  (global-set-key (kbd "C-x g") 'magit-status)
+  (add-hook 'magit-log-edit-mode-hook
+            (lambda () (set-fill-column 72)
+              (auto-fill-mode 1)
+              (fci-mode 1))))
 
 ;; ------------------
 ;; Visual rectangles
