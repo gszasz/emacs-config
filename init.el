@@ -45,11 +45,12 @@
 ;; ---------------------------
 (add-to-list 'load-path "~/.emacs.d/lisp/")
 
-;; ---------------------------------
-;;  Load sublime-text-2 color theme
-;; ---------------------------------
-(require 'sublime-text-2)
-(sublime-text-2)
+;; --------------------------------------------------------
+;;  Load sublime-text-2 color theme when running in window
+;; --------------------------------------------------------
+(when (display-graphic-p)
+  (require 'sublime-text-2)
+  (sublime-text-2))
 
 ;; -----------------------
 ;;  Set line highlighting
