@@ -48,19 +48,18 @@
 ;; --------------------------------------------------------
 ;;  Load sublime-text-2 color theme when running in window
 ;; --------------------------------------------------------
-(when (display-graphic-p)
+(when (or (daemonp) (display-graphic-p))
   (require 'sublime-text-2)
   (sublime-text-2))
 
 ;; -----------------------
 ;;  Set line highlighting
 ;; -----------------------
-(when (display-graphic-p)
+(when (or (daemonp) (display-graphic-p))
   (require 'hl-line+)
   ;(toggle-hl-line-when-idle 1)
   (global-hl-line-mode t)
   (setq hl-line-inhibit-highlighting-for-modes (quote (Info-mode help-mode custom-mode view-mode term-mode shell-mode eshell-mode magit-status-mode calendar-mode))))
-
 
 ;; -----------------------
 ;;  Fill column indicator
