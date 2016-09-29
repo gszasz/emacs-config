@@ -2,7 +2,7 @@ abbrev_defs
 ac-comphist.dat
 
 # auto saved files
-auto-save-list
+auto-save-list/
 
 # eshell temporary files
 eshell
@@ -12,6 +12,12 @@ thumbs
 
 # tramp connection history
 tramp
+
+# session files
+/session.*
+
+# ido-mode history
+/ido.last
 
 # backup files
 *~
