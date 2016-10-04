@@ -89,6 +89,9 @@
                                   (interactive)
                                   (sr-speedbar-close)))
 
+;;; Remove trailing whitespace before saving
+(add-hook 'before-save-hook 'delete-trailing-whitespace)
+
 ;;; Emacs-Lisp mode
 (add-hook 'emacs-lisp-mode-hook (lambda () (set-fill-column 70)))
 
@@ -106,7 +109,7 @@
 (when (featurep 'php-mode)
   (require 'php-mode)
   ;; To use abbrev-mode, add lines like this:
-  (add-hook 'php-mode-hook 
+  (add-hook 'php-mode-hook
             (lambda () (define-abbrev php-mode-abbrev-table "ex" "extends")
               (auto-fill-mode -1)
               (fci-mode 1))))
@@ -114,7 +117,7 @@
 ;;; GitHub Flavored Markdown Mode
 (autoload 'gfm-mode "markdown-mode" "Major mode for editing GitHub Flavored Markdown files" t)
 (add-to-list 'auto-mode-alist '("README\\.md\\'" . gfm-mode))
-(add-hook 'gfm-mode-hook 
+(add-hook 'gfm-mode-hook
           (lambda () (fci-mode 1)))
 
 
@@ -126,7 +129,7 @@
 (when (featurep 'tex)
   (require 'tex)
   (TeX-global-PDF-mode t)
-  (add-hook 'LaTeX-mode-hook 
+  (add-hook 'LaTeX-mode-hook
             (lambda ()  (auto-fill-mode -1)
               (fci-mode 1))))
 
