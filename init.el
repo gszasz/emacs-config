@@ -1,11 +1,27 @@
-;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;
-;; Gabriel Szasz's Emacs Environment
-;; http://physics.muni.cz/~gszasz/
-;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;
+;;; init.el --- Initialize Gabriel Szasz's Emacs Environment
 
-;; ----------------------------------------
-;;  Load variables & faces added by Custom
-;; ----------------------------------------
+;; Copyright (C) 2016 Gabriel Szasz
+
+;; Author: Gabriel Szasz <gabriel.szasz1@gmail.com>
+;; Version: 0.1
+
+;; This file is not part of GNU Emacs.
+
+;; This program is free software: you can redistribute it and/or
+;; modify it under the terms of the GNU General Public License as
+;; published by the Free Software Foundation, either version 3 of the
+;; License, or (at your option) any later version.
+
+;; This program is distributed in the hope that it will be useful,
+;; but WITHOUT ANY WARRANTY; without even the implied warranty of
+;; MERCHANTABILITY or FITNESS FOR A PARTICULAR PURPOSE.  See the GNU
+;; General Public License for more details.
+
+;; You should have received a copy of the GNU General Public License
+;; along with this program.  If not, see
+;; <http://www.gnu.org/licenses/>.
+
+;;; Load variables & faces added by Custom
 (custom-set-variables
  ;; custom-set-variables was added by Custom.
  ;; If you edit it by hand, you could mess it up, so be careful.
@@ -40,36 +56,26 @@
  '(calendar-today ((t :background "red")) t)
  '(term-color-blue ((t (:background "dodgerblue" :foreground "dodgerblue")))))
 
-;; ---------------------------
-;;  Add my elisp to load-path
-;; ---------------------------
+;;; Add my elisp to load-path
 (add-to-list 'load-path "~/.emacs.d/lisp/")
 
-;; --------------------------------------------------------
-;;  Load sublime-text-2 color theme when running in window
-;; --------------------------------------------------------
+;;; Load sublime-text-2 color theme when running in window
 (when (or (daemonp) (display-graphic-p))
   (require 'sublime-text-2)
   (sublime-text-2))
 
-;; -----------------------
-;;  Set line highlighting
-;; -----------------------
+;;; Set line highlighting
 (when (or (daemonp) (display-graphic-p))
   (require 'hl-line+)
   ;(toggle-hl-line-when-idle 1)
   (global-hl-line-mode t)
   (setq hl-line-inhibit-highlighting-for-modes (quote (Info-mode help-mode custom-mode view-mode term-mode shell-mode eshell-mode magit-status-mode calendar-mode))))
 
-;; -----------------------
-;;  Fill column indicator
-;; -----------------------
+;;; Fill column indicator
 (require 'fill-column-indicator)
 (setq fci-rule-color "#555753")
 
-;; --------------
-;;  Set SpeedBar
-;; --------------
+;;; Set SpeedBar
 (require 'sr-speedbar)
 (setq sr-speedbar-skip-other-window-p t)
 (setq speedbar-show-unknown-files t)
@@ -83,28 +89,20 @@
                                   (interactive)
                                   (sr-speedbar-close)))
 
-;; -----------------
-;;  Emacs-Lisp mode
-;; -----------------
+;;; Emacs-Lisp mode
 (add-hook 'emacs-lisp-mode-hook (lambda () (set-fill-column 70)))
 
-;; -----------
-;;  YAML mode
-;; -----------
+;;; YAML mode
 (require 'yaml-mode)
 (add-hook 'yaml-mode-hook
           '(lambda ()
              (define-key yaml-mode-map "\C-m" 'newline-and-indent)))
 
-;; -----------
-;; Python IDE
-;; -----------
+;;; Python IDE
 (package-initialize)
 (elpy-enable)
 
-;; -----------
-;;  PHP Mode
-;; -----------
+;;; PHP Mode
 (when (featurep 'php-mode)
   (require 'php-mode)
   ;; To use abbrev-mode, add lines like this:
@@ -113,23 +111,18 @@
               (auto-fill-mode -1)
               (fci-mode 1))))
 
-;; -------------------------------
-;;  GitHub Flavored Markdown Mode
-;; -------------------------------
+;;; GitHub Flavored Markdown Mode
 (autoload 'gfm-mode "markdown-mode" "Major mode for editing GitHub Flavored Markdown files" t)
 (add-to-list 'auto-mode-alist '("README\\.md\\'" . gfm-mode))
 (add-hook 'gfm-mode-hook 
           (lambda () (fci-mode 1)))
 
-;; -----------------------------------------
-;;  Turn off linum-mode in some major modes
-;; -----------------------------------------
+
+;;; Turn off linum-mode in some major modes
 ;(require 'linum-off)
 ;(add-hook 'find-file-hook (lambda () (linum-mode -1)))
 
-;; ------------
-;; AUCTeX mode
-;; ------------
+;;; AUCTeX mode
 (when (featurep 'tex)
   (require 'tex)
   (TeX-global-PDF-mode t)
@@ -137,25 +130,20 @@
             (lambda ()  (auto-fill-mode -1)
               (fci-mode 1))))
 
-;; ----------------------------------------
-;; Define keys for global clipboard access
-;; ----------------------------------------
+;;; Define keys for global clipboard access
 (global-set-key [(shift delete)] 'clipboard-kill-region)
 (global-set-key [(control insert)] 'clipboard-kill-ring-save)
 (global-set-key [(shift insert)] 'clipboard-yank)
 
-;; ----------------
-;; Git commit mode
-;; ----------------
+
+;;; Git commit mode
 (require 'git-commit)
 (add-hook 'git-commit-mode-hook
           (lambda () (set-fill-column 72)
             (auto-fill-mode 1)
             (fci-mode 1)))
 
-;; -----------
-;; magit mode
-;; -----------
+;;; magit mode
 (when (featurep 'magit)
   (require 'magit)
   (global-set-key (kbd "C-x g") 'magit-status)
@@ -164,9 +152,7 @@
               (auto-fill-mode 1)
               (fci-mode 1))))
 
-;; ------------------
-;; Visual rectangles
-;; ------------------
+;;; Visual rectangles
 ;(global-set-key (kbd "C-x r C-SPC") 'rm-set-mark)
 ;(global-set-key (kbd "C-x r C-x") 'rm-exchange-point-and-mark)
 ;(global-set-key (kbd "C-x r C-w") 'rm-kill-region)
@@ -180,17 +166,12 @@
 (autoload 'rm-kill-ring-save "rect-mark"
   "Copy a rectangular region to the kill ring." t)
 
-;; -------------------------------------
-;; Switch to previous window with C-x O
-;; -------------------------------------
+;;; Switch to previous window with C-x O
 (global-set-key (kbd "C-x O") (lambda ()
                                 (interactive)
                                 (other-window -1)))
 
-
-;; --------------------------------------
-;; Define function for unfilling a block
-;; --------------------------------------
+;;; Define function for unfilling a block
 (defun compact-uncompact-block ()
   "Remove or add line ending chars on current paragraph.
 This command is similar to a toggle of `fill-paragraph'.
