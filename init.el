@@ -59,6 +59,11 @@
 ;;; Add my elisp to load-path
 (add-to-list 'load-path "~/.emacs.d/lisp/")
 
+
+;;; Add file path in front of the buffer name
+(require 'uniquify)
+(setq uniquify-buffer-name-style 'forward)
+
 ;;; Load sublime-text-2 color theme when running in window
 (when (or (daemonp) (display-graphic-p))
   (require 'sublime-text-2)
