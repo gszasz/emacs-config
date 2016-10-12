@@ -111,13 +111,12 @@
 (elpy-enable)
 
 ;;; PHP Mode
-(when (featurep 'php-mode)
-  (require 'php-mode)
-  ;; To use abbrev-mode, add lines like this:
-  (add-hook 'php-mode-hook
-            (lambda () (define-abbrev php-mode-abbrev-table "ex" "extends")
-              (auto-fill-mode -1)
-              (fci-mode 1))))
+(require 'php-mode)
+;; To use abbrev-mode, add lines like this:
+(add-hook 'php-mode-hook
+          (lambda () (define-abbrev php-mode-abbrev-table "ex" "extends")
+            (auto-fill-mode -1)
+            (fci-mode 1)))
 
 ;;; GitHub Flavored Markdown Mode
 (autoload 'gfm-mode "markdown-mode" "Major mode for editing GitHub Flavored Markdown files" t)
