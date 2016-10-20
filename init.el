@@ -97,6 +97,10 @@
 ;;; Remove trailing whitespace before saving
 (add-hook 'before-save-hook 'delete-trailing-whitespace)
 
+;;; Set Pastebin interface
+(require 'pastebin)
+(setq pastebin-default-domain "pastebin.test.redhat.com")
+
 ;;; Emacs-Lisp mode
 (add-hook 'emacs-lisp-mode-hook (lambda () (set-fill-column 70)))
 
