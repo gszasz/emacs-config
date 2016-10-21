@@ -56,9 +56,9 @@
  '(calendar-today ((t :background "red")) t)
  '(term-color-blue ((t (:background "dodgerblue" :foreground "dodgerblue")))))
 
+
 ;;; Add my elisp to load-path
 (add-to-list 'load-path "~/.emacs.d/lisp/")
-
 
 ;;; Add file path in front of the buffer name
 (require 'uniquify)
@@ -100,6 +100,11 @@
 ;;; Set Pastebin interface
 (require 'pastebin)
 (setq pastebin-default-domain "pastebin.test.redhat.com")
+
+;;; Syslog mode
+(require 'syslog-mode)
+(add-to-list 'auto-mode-alist '("/var/log.*\\'" . syslog-mode))
+(add-to-list 'auto-mode-alist '(".*\\.log\\(\\.gz\\|\\.bz2\\)?\\'" . syslog-mode))
 
 ;;; Emacs-Lisp mode
 (add-hook 'emacs-lisp-mode-hook (lambda () (set-fill-column 70)))
