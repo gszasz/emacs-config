@@ -118,6 +118,8 @@
 ;;; Python IDE
 (package-initialize)
 (elpy-enable)
+(add-hook 'python-mode-hook
+          (lambda () (fci-mode 1)))
 
 ;;; PHP Mode
 (require 'php-mode)
