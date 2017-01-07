@@ -1,9 +1,9 @@
 ;;; init.el --- Initialize Gabriel Szasz's Emacs Environment
 
-;; Copyright (C) 2016 Gabriel Szasz
+;; Copyright (C) 2016, 2017 Gabriel Szasz
 
 ;; Author: Gabriel Szasz <gabriel.szasz1@gmail.com>
-;; Version: 0.1
+;; Version: 0.2
 
 ;; This file is not part of GNU Emacs.
 
@@ -114,6 +114,11 @@
 (add-hook 'yaml-mode-hook
           '(lambda ()
              (define-key yaml-mode-map "\C-m" 'newline-and-indent)))
+
+;;; CSV mode
+(add-to-list 'auto-mode-alist '("\\.[Cc][Ss][Vv]\\'" . csv-mode))
+(autoload 'csv-mode "csv-mode"
+  "Major mode for editing comma-separated value files." t)
 
 ;;; Python IDE
 (package-initialize)
