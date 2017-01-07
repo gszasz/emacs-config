@@ -24,7 +24,9 @@ tramp
 
 # compiled files
 #
-# Note that since the repository does not hold compiled lisp files, you need to
-# run: "C-u 0 M-x byte-recompile-directory" (on ~/.emacs.d) after each update.
-# 
+# Note that since the repository does not hold compiled lisp and compiled Python
+# files, you need to run: "C-u 0 M-x byte-recompile-directory" (on ~/.emacs.d)
+# after each update.
+#
 *.elc
+*.pyc
