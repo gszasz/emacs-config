@@ -146,8 +146,7 @@
 ;(add-hook 'find-file-hook (lambda () (linum-mode -1)))
 
 ;;; AUCTeX mode
-(when (featurep 'tex)
-  (require 'tex)
+(when (require 'tex nil 'noerror)
   (TeX-global-PDF-mode t)
   (add-hook 'LaTeX-mode-hook
             (lambda ()  (auto-fill-mode -1)
@@ -167,8 +166,7 @@
             (fci-mode 1)))
 
 ;;; magit mode
-(when (featurep 'magit)
-  (require 'magit)
+(when (require 'magit nil 'noerror)
   (global-set-key (kbd "C-x g") 'magit-status)
   (add-hook 'magit-log-edit-mode-hook
             (lambda () (set-fill-column 72)
