@@ -31,6 +31,7 @@
  '(before-save-hook (quote (copyright-update time-stamp)))
  '(calendar-week-start-day 1)
  '(column-number-mode t)
+ '(ediff-window-setup-function (quote ediff-setup-windows-plain))
  '(fill-column 80)
  '(frame-background-mode (quote dark))
  '(ido-mode (quote both) nil (ido))
