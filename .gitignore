@@ -9,6 +9,7 @@ eshell
 
 # dired thumbnails
 thumbs
+image-dired
 
 # tramp connection history
 tramp
