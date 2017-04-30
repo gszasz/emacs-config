@@ -86,14 +86,9 @@
 (setq sr-speedbar-skip-other-window-p t)
 (setq speedbar-show-unknown-files t)
 (setq speedbar-use-images nil)
-(global-set-key (kbd "C-x M-o") (lambda ()
-                                  (interactive)
-                                 (unless (sr-speedbar-exist-p) (sr-speedbar-open))
-                                  (sr-speedbar-select-window)))
-
-(global-set-key (kbd "C-x M-c") (lambda ()
-                                  (interactive)
-                                  (sr-speedbar-close)))
+(global-set-key (kbd "<f5>") (lambda ()
+                               (interactive)
+                               (sr-speedbar-toggle)))
 
 ;;; Remove trailing whitespace before saving
 (add-hook 'before-save-hook 'delete-trailing-whitespace)
