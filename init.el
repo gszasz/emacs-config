@@ -132,7 +132,7 @@
 
 ;;; GitHub Flavored Markdown Mode
 (autoload 'gfm-mode "markdown-mode" "Major mode for editing GitHub Flavored Markdown files" t)
-(add-to-list 'auto-mode-alist '("README\\.md\\'" . gfm-mode))
+(add-to-list 'auto-mode-alist '("\\.md\\'" . gfm-mode))
 (add-hook 'gfm-mode-hook
           (lambda () (fci-mode 1)))
 
