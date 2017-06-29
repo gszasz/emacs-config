@@ -75,7 +75,7 @@
   (require 'hl-line+)
   ;(toggle-hl-line-when-idle 1)
   (global-hl-line-mode t)
-  (setq hl-line-inhibit-highlighting-for-modes (quote (Info-mode help-mode custom-mode view-mode term-mode shell-mode eshell-mode magit-status-mode calendar-mode))))
+  (setq hl-line-inhibit-highlighting-for-modes (quote (Info-mode help-mode custom-mode view-mode term-mode shell-mode eshell-mode magit-status-mode magit-log-mode magit-diff-mode magit-key-mode calendar-mode))))
 
 ;;; Fill column indicator
 (require 'fill-column-indicator)
