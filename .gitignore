@@ -16,12 +16,14 @@ tramp
 
 # session files
 /session.*
+/.emacs.desktop*
 
 # ido-mode history
 /ido.last
 
 # backup files
 *~
+\#*#
 
 # compiled files
 #
