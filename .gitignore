@@ -24,6 +24,7 @@ tramp
 # backup files
 *~
 \#*#
+.\#*
 
 # compiled files
 #
