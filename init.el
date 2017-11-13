@@ -3,7 +3,7 @@
 ;; Copyright (C) 2016, 2017 Gabriel Szasz
 
 ;; Author: Gabriel Szasz <gabriel.szasz1@gmail.com>
-;; Version: 0.2
+;; Version: 1.0
 
 ;; This file is not part of GNU Emacs.
 
@@ -21,199 +21,118 @@
 ;; along with this program.  If not, see
 ;; <http://www.gnu.org/licenses/>.
 
-;;; Load variables & faces added by Custom
-(custom-set-variables
- ;; custom-set-variables was added by Custom.
- ;; If you edit it by hand, you could mess it up, so be careful.
- ;; Your init file should contain only one such instance.
- ;; If there is more than one, they won't work right.
- '(auto-insert-mode t)
- '(before-save-hook (quote (copyright-update time-stamp)))
- '(calendar-week-start-day 1)
- '(column-number-mode t)
- '(ediff-window-setup-function (quote ediff-setup-windows-plain))
- '(fill-column 80)
- '(frame-background-mode (quote dark))
- '(ido-mode (quote both) nil (ido))
- '(indent-tabs-mode nil)
- '(indicate-buffer-boundaries (quote right))
- '(inhibit-startup-screen t)
- '(menu-bar-mode nil)
- '(org-footnote-auto-label (quote plain))
- '(scroll-bar-mode nil)
- '(show-paren-mode t)
- '(tab-width 4)
- '(text-mode-hook (quote (turn-on-auto-fill text-mode-hook-identify)))
- '(tool-bar-mode nil))
-
-;;; uncomment for CJK utf-8 support for non-Asian users
-;; (require 'un-define)
-(custom-set-faces
- ;; custom-set-faces was added by Custom.
- ;; If you edit it by hand, you could mess it up, so be careful.
- ;; Your init file should contain only one such instance.
- ;; If there is more than one, they won't work right.
- '(default ((t (:family "DejaVu Sans Mono" :foundry "unknown" :slant normal :weight normal :height 98 :width normal))))
- '(calendar-today ((t :background "red")) t)
- '(term-color-blue ((t (:background "dodgerblue" :foreground "dodgerblue")))))
-
-
-;;; Add my elisp to load-path
+;; Add my lisp directory to load-path
 (add-to-list 'load-path "~/.emacs.d/lisp/")
 
-;;; Add file path in front of the buffer name
-(require 'uniquify)
-(setq uniquify-buffer-name-style 'forward)
+;; Workarounds for 'emacsclient -c' issues (Emacs 25.3.1)
+(when (daemonp)
+  ;; Issue: Custom buffers do not display graphic buttons.
+  (setq custom-raised-buttons t)
+  ;; Issue: Cursor is not blinking.
+  (blink-cursor-mode 1))
 
-;;; Load sublime-text-2 color theme when running in window
-(when (or (daemonp) (display-graphic-p))
-  (require 'sublime-text-2)
-  (sublime-text-2))
-
-;;; Set line highlighting
-(when (or (daemonp) (display-graphic-p))
-  (require 'hl-line+)
-  ;(toggle-hl-line-when-idle 1)
-  (global-hl-line-mode t)
-  (setq hl-line-inhibit-highlighting-for-modes (quote (Info-mode help-mode custom-mode view-mode term-mode shell-mode eshell-mode magit-status-mode magit-log-mode magit-diff-mode magit-key-mode calendar-mode))))
-
-;;; Fill column indicator
-(require 'fill-column-indicator)
-(setq fci-rule-color "#555753")
-
-;;; Set SpeedBar
-(require 'sr-speedbar)
-(setq sr-speedbar-skip-other-window-p t)
-(setq speedbar-show-unknown-files t)
-(setq speedbar-use-images nil)
-(global-set-key (kbd "<f5>") (lambda ()
-                               (interactive)
-                               (sr-speedbar-toggle)))
-
-;;; Remove trailing whitespace before saving
-(add-hook 'before-save-hook 'delete-trailing-whitespace)
-
-;;; Set Pastebin interface
-(require 'pastebin)
-(setq pastebin-default-domain "pastebin.test.redhat.com")
-
-;;; Syslog mode
-(require 'syslog-mode)
-(add-to-list 'auto-mode-alist '("/var/log.*\\'" . syslog-mode))
-(add-to-list 'auto-mode-alist '(".*\\.log\\(\\.gz\\|\\.bz2\\)?\\'" . syslog-mode))
-
-;;; Emacs-Lisp mode
-(add-hook 'emacs-lisp-mode-hook (lambda () (set-fill-column 70)))
-
-;;; YAML mode
-(require 'yaml-mode)
-(add-hook 'yaml-mode-hook
-          (lambda ()
-             (define-key yaml-mode-map "\C-m" 'newline-and-indent)))
-
-;;; CSV mode
-(add-to-list 'auto-mode-alist '("\\.[Cc][Ss][Vv]\\'" . csv-mode))
-(autoload 'csv-mode "csv-mode"
-  "Major mode for editing comma-separated value files." t)
-
-;;; Python IDE
+;; Added by Package.el.  This must come before configurations of
+;; installed packages.  Don't delete this line.  If you don't want it,
+;; just comment it out by adding a semicolon to the start of the line.
+;; You may delete these explanatory comments.
 (package-initialize)
+
+;; Load variables & faces added by Custom
+(setq custom-file "~/.emacs.d/custom.el")
+(load custom-file 'noerror)
+
+;; Fill column indicator
+(require 'fill-column-indicator)
+
+;; Autocomplete
+(require 'auto-complete)
+
+;; Emacs-Lisp mode
+(add-hook 'emacs-lisp-mode-hook
+          (lambda () (set-fill-column 70)
+            (add-hook 'before-save-hook 'whitespace-cleanup nil t)))
+
+;; YAML mode
+(require 'yaml-mode)
+(add-to-list 'auto-mode-alist '("\\.yml\\'" . yaml-mode))
+(add-hook 'yaml-mode-hook
+          (lambda () (define-key yaml-mode-map (kbd "C-m") 'newline-and-indent)
+            (add-hook 'before-save-hook 'whitespace-cleanup nil t)))
+
+;; CSV mode
+(add-to-list 'auto-mode-alist '("\\.[Cc][Ss][Vv]\\'" . csv-mode))
+(autoload 'csv-mode "csv-mode" "Major mode for editing comma-separated value files." t)
+
+;; MediaWiki mode
+(require 'mediawiki)
+(add-to-list 'auto-mode-alist '("\\.wiki\\'" . mediawiki-mode))
+(add-hook 'mediawiki-mode-hook
+      (lambda () (local-unset-key (kbd "M-g"))
+        (local-unset-key (kbd "C-x C-s"))
+        (remove-hook 'outline-minor-mode-hook 'mediawiki-outline-magic-keys)))
+
+;; PYTHON IDE
 (elpy-enable)
 (add-hook 'python-mode-hook
-          (lambda () (fci-mode 1)))
+          (lambda () (fci-mode 1)
+            (add-hook 'before-save-hook 'whitespace-cleanup nil t)))
 
-;;; PHP Mode
+;; PHP Mode
 (require 'php-mode)
 ;; To use abbrev-mode, add lines like this:
 (add-hook 'php-mode-hook
           (lambda () (define-abbrev php-mode-abbrev-table "ex" "extends")
             (auto-fill-mode -1)
-            (fci-mode 1)))
+            (fci-mode 1)
+            (add-hook 'before-save-hook 'whitespace-cleanup nil t)))
 
-;;; GitHub Flavored Markdown Mode
+;; GitHub Flavored Markdown Mode
 (autoload 'gfm-mode "markdown-mode" "Major mode for editing GitHub Flavored Markdown files" t)
 (add-to-list 'auto-mode-alist '("\\.md\\'" . gfm-mode))
 (add-hook 'gfm-mode-hook
-          (lambda () (fci-mode 1)))
+          (lambda () (fci-mode 1)
+            (add-hook 'before-save-hook 'whitespace-cleanup nil t)))
 
+;; AUCTeX mode
+(require 'tex-mode)
+(require 'auto-complete-auctex)
+(TeX-global-PDF-mode t)
+(add-hook 'LaTeX-mode-hook
+      (lambda ()  (flyspell-prog-mode)
+        (auto-fill-mode -1)
+        (fci-mode 1)
+        (add-hook 'before-save-hook 'whitespace-cleanup nil t)))
 
-;;; Turn off linum-mode in some major modes
-;(require 'linum-off)
-;(add-hook 'find-file-hook (lambda () (linum-mode -1)))
+;; Gnuplot mode
+(require 'gnuplot-mode)
+(add-hook 'gnuplot-mode-hook
+          (lambda ()
+            (flyspell-prog-mode)
+            (add-hook 'before-save-hook 'whitespace-cleanup nil t)))
 
-;;; AUCTeX mode
-(when (require 'tex nil 'noerror)
-  (TeX-global-PDF-mode t)
-  (add-hook 'LaTeX-mode-hook
-            (lambda ()  (auto-fill-mode -1)
-              (fci-mode 1))))
+;; Define key for Magit mode
+(require 'magit)
+(global-set-key (kbd "C-x g") 'magit-status)
 
-;;; Define keys for global clipboard access
-(global-set-key [(shift delete)] 'clipboard-kill-region)
-(global-set-key [(control insert)] 'clipboard-kill-ring-save)
-(global-set-key [(shift insert)] 'clipboard-yank)
+;; Define keys for global clipboard access
+(global-set-key (kbd "S-<delete>") 'clipboard-kill-region)
+(global-set-key (kbd "C-<insert>") 'clipboard-kill-ring-save)
+(global-set-key (kbd "S-<insert>") 'clipboard-yank)
 
+;; Map right mouse button to open mode-specific menu
+(global-set-key [mouse-3] 'mouse-popup-menubar-stuff)
 
-;;; Git commit mode
-(require 'git-commit)
-(add-hook 'git-commit-mode-hook
-          (lambda () (set-fill-column 72)
-            (auto-fill-mode 1)
-            (fci-mode 1)))
+;; Define keys for windmove control
+(global-set-key (kbd "M-s-<left>") 'windmove-left)
+(global-set-key (kbd "M-s-<right>") 'windmove-right)
+(global-set-key (kbd "M-s-<up>") 'windmove-up)
+(global-set-key (kbd "M-s-<down>") 'windmove-down)
 
-;;; magit mode
-(when (require 'magit nil 'noerror)
-  (global-set-key (kbd "C-x g") 'magit-status)
-  (add-hook 'magit-log-edit-mode-hook
-            (lambda () (set-fill-column 72)
-              (auto-fill-mode 1)
-              (fci-mode 1))))
-
-;;; Visual rectangles
-;(global-set-key (kbd "C-x r C-SPC") 'rm-set-mark)
-;(global-set-key (kbd "C-x r C-x") 'rm-exchange-point-and-mark)
-;(global-set-key (kbd "C-x r C-w") 'rm-kill-region)
-;(global-set-key (kbd "C-x r M-w") 'rm-kill-ring-save)
-(autoload 'rm-set-mark "rect-mark"
-  "Set mark for rectangle." t)
-(autoload 'rm-exchange-point-and-mark "rect-mark"
-  "Exchange point and mark for rectangle." t)
-(autoload 'rm-kill-region "rect-mark"
-  "Kill a rectangular region and save it in the kill ring." t)
-(autoload 'rm-kill-ring-save "rect-mark"
-  "Copy a rectangular region to the kill ring." t)
-
-;;; Switch to previous window with C-x O
+;; Switch to previous window with C-x O
 (global-set-key (kbd "C-x O") (lambda ()
                                 (interactive)
                                 (other-window -1)))
 
-;;; Define function for unfilling a block
-(defun compact-uncompact-block ()
-  "Remove or add line ending chars on current paragraph.
-This command is similar to a toggle of `fill-paragraph'.
-When there is a text selection, act on the region."
-  (interactive)
-
-  ;; This command symbol has a property “'stateIsCompact-p”.
-  (let (currentStateIsCompact (bigFillColumnVal 90002000) (deactivate-mark nil))
-    ;; 90002000 is just random. you can use `most-positive-fixnum'
-
-    (save-excursion
-      ;; Determine whether the text is currently compact.
-      (setq currentStateIsCompact
-            (if (eq last-command this-command)
-                (get this-command 'stateIsCompact-p)
-              (if (> (- (line-end-position) (line-beginning-position)) fill-column) t nil) ) )
-
-      (if (use-region-p)
-          (if currentStateIsCompact
-              (fill-region (region-beginning) (region-end))
-            (let ((fill-column bigFillColumnVal))
-              (fill-region (region-beginning) (region-end))) )
-        (if currentStateIsCompact
-            (fill-paragraph nil)
-          (let ((fill-column bigFillColumnVal))
-            (fill-paragraph nil)) ) )
-
-      (put this-command 'stateIsCompact-p (if currentStateIsCompact nil t)) ) ) )
+;; Unfill paragraph with s-q
+(require 'unfill)
+(global-set-key (kbd "s-q") 'unfill-paragraph)

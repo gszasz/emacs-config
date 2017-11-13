@@ -1,8 +1,8 @@
-abbrev_defs
-ac-comphist.dat
-
 # auto saved files
 auto-save-list/
+
+# MELPA packages
+elpa/
 
 # eshell temporary files
 eshell
@@ -27,10 +27,5 @@ tramp
 .\#*
 
 # compiled files
-#
-# Note that since the repository does not hold compiled lisp and compiled Python
-# files, you need to run: "C-u 0 M-x byte-recompile-directory" (on ~/.emacs.d)
-# after each update.
-#
 *.elc
-*.pyc
+elpa/
