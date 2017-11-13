@@ -11,6 +11,7 @@
  '(fci-rule-color "#3E4451")
  '(fill-column 80)
  '(git-commit-fill-column 72)
+ '(git-commit-summary-max-length 50)
  '(global-hl-line-mode t)
  '(ido-mode (quote both) nil (ido))
  '(indent-tabs-mode nil)
