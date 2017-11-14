@@ -47,15 +47,6 @@
 ;; Autocomplete
 (require 'auto-complete)
 
-;; Text mode
-(add-hook 'text-mode-hook
-          (lambda () (flyspell-prog-mode)
-            (fci-mode 1)
-            (add-hook 'before-save-hook 'whitespace-cleanup nil t)))
-
-;; Magit mode
-(require 'magit)
-
 ;; Emacs-Lisp mode
 (add-hook 'emacs-lisp-mode-hook
           (lambda () (set-fill-column 70)
@@ -119,6 +110,13 @@
             (flyspell-prog-mode 1)
             (add-hook 'before-save-hook 'whitespace-cleanup nil t)))
 
+;; Magit mode
+(require 'magit)
+(global-set-key (kbd "C-x g") 'magit-status)
+(add-hook 'git-commit-setup-hook
+          (lambda () (flyspell-mode)
+            (fci-mode 1)))
+
 ;; Define keys for global clipboard access
 (global-set-key (kbd "S-<delete>") 'clipboard-kill-region)
 (global-set-key (kbd "C-<insert>") 'clipboard-kill-ring-save)
@@ -141,6 +139,3 @@
 ;; Unfill paragraph with s-q
 (require 'unfill)
 (global-set-key (kbd "s-q") 'unfill-paragraph)
-
-;; Define key to open magit-status
-(global-set-key (kbd "C-x g") 'magit-status)
