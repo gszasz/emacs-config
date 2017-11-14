@@ -1,7 +1,7 @@
 # My personal Emacs config
 
 The configuration is valid for GNU Emacs 25.3.1 compiled from source code and
-installed into /usr/local prefix.
+installed into `/usr/local` prefix.
 
 
 ## Installation
@@ -27,21 +27,13 @@ menubar, toolbar and scroll bar 'prior' reading my initialization config file is
 to do it via X resources.  My `Xresources` file matches `deeper-blue` theme and
 indeed my Emacs starts without any glitching.
 
-You might want to execute following command at the start of your window manager.
-
-```
-xrdb -merge ~/.emacs.d/Xresources
-```
-
-Alternatively, you can integrate these Emacs settings into your '~/.Xresources`
-file.
+You might want to put those settings into your `~/.Xresources` file.
 
 ```
 cat ~/.emacs.d/Xresources >> ~/.Xresources
 ```
 
-Unless you are managing X resources in the other way, it is a good idea to merge
-`~/.emacs.d/Xresources` into your `~/.Xresources` file.
+I am having these settings integrated in my [.i3/Xresources](doti3/blob/master/Xresources).
 
 
 ### Emacs daemon
