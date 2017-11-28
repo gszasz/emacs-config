@@ -112,6 +112,7 @@
 
 ;; Magit mode
 (require 'magit)
+(require 'magit-gerrit)
 (global-set-key (kbd "C-x g") 'magit-status)
 (add-hook 'git-commit-setup-hook
           (lambda () (flyspell-mode)
