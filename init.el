@@ -50,6 +50,7 @@
 ;; Emacs-Lisp mode
 (add-hook 'emacs-lisp-mode-hook
           (lambda () (set-fill-column 70)
+            (flyspell-prog-mode)
             (add-hook 'before-save-hook 'whitespace-cleanup nil t)))
 
 ;; YAML mode
@@ -57,6 +58,7 @@
 (add-to-list 'auto-mode-alist '("\\.yml\\'" . yaml-mode))
 (add-hook 'yaml-mode-hook
           (lambda () (define-key yaml-mode-map (kbd "C-m") 'newline-and-indent)
+            (flyspell-prog-mode)
             (add-hook 'before-save-hook 'whitespace-cleanup nil t)))
 
 ;; CSV mode
@@ -67,14 +69,16 @@
 (require 'mediawiki)
 (add-to-list 'auto-mode-alist '("\\.wiki\\'" . mediawiki-mode))
 (add-hook 'mediawiki-mode-hook
-      (lambda () (local-unset-key (kbd "M-g"))
-        (local-unset-key (kbd "C-x C-s"))
-        (remove-hook 'outline-minor-mode-hook 'mediawiki-outline-magic-keys)))
+          (lambda () (local-unset-key (kbd "M-g"))
+            (local-unset-key (kbd "C-x C-s"))
+            (remove-hook 'outline-minor-mode-hook 'mediawiki-outline-magic-keys)
+            (flyspell-mode 1)))
 
 ;; PYTHON IDE
 (elpy-enable)
 (add-hook 'python-mode-hook
           (lambda () (fci-mode 1)
+            (flyspell-prog-mode)
             (add-hook 'before-save-hook 'whitespace-cleanup nil t)))
 
 ;; PHP Mode
@@ -84,6 +88,7 @@
           (lambda () (define-abbrev php-mode-abbrev-table "ex" "extends")
             (auto-fill-mode -1)
             (fci-mode 1)
+            (flyspell-prog-mode)
             (add-hook 'before-save-hook 'whitespace-cleanup nil t)))
 
 ;; GitHub Flavored Markdown Mode
@@ -91,6 +96,7 @@
 (add-to-list 'auto-mode-alist '("\\.md\\'" . gfm-mode))
 (add-hook 'gfm-mode-hook
           (lambda () (fci-mode 1)
+            (flyspell-mode 1)
             (add-hook 'before-save-hook 'whitespace-cleanup nil t)))
 
 ;; AUCTeX mode
@@ -98,16 +104,16 @@
 (require 'auto-complete-auctex)
 (TeX-global-PDF-mode t)
 (add-hook 'LaTeX-mode-hook
-      (lambda ()  (flyspell-prog-mode)
-        (auto-fill-mode -1)
+      (lambda () (auto-fill-mode -1)
         (fci-mode 1)
+        (flyspell-mode 1)
         (add-hook 'before-save-hook 'whitespace-cleanup nil t)))
 
 ;; Gnuplot mode
 (require 'gnuplot-mode)
 (add-hook 'gnuplot-mode-hook
           (lambda ()
-            (flyspell-prog-mode 1)
+            (flyspell-prog-mode)
             (add-hook 'before-save-hook 'whitespace-cleanup nil t)))
 
 ;; Magit mode
