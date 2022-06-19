@@ -7,7 +7,6 @@ The configuration is valid for GNU Emacs 27.2.1 installed from RPMs.
 ### RPM Packages
 
 * emacs
-* emacs-common
 * emacs-filesystem
 * emacs-dash
 * emacs-deferred
@@ -40,7 +39,7 @@ The configuration is valid for GNU Emacs 27.2.1 installed from RPMs.
 In Fedora 36, you can install all RPMs above by following command:
 
 ```shell
-sudo dnf install emacs emacs-common emacs-filesystem emacs-dash emacs-deferred \
+sudo dnf install emacs emacs-filesystem emacs-dash emacs-deferred \
   emacs-with-editor emacs-async emacs-ctable emacs-epc emacs-epl \
   emacs-pkg-info emacs-flycheck emacs-json-reformat emacs-json-snatcher \
   emacs-popup emacs-auto-complete emacs-s emacs-transient \
