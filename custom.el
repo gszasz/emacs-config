@@ -18,6 +18,7 @@
    '(git-commit-save-message git-commit-setup-changelog-support git-commit-turn-on-auto-fill git-commit-turn-on-flyspell git-commit-propertize-diff bug-reference-mode with-editor-usage-message display-fill-column-indicator-mode set-fill-column-git-commit))
  '(git-commit-summary-max-length 50)
  '(global-yascroll-bar-mode t)
+ '(indent-tabs-mode nil)
  '(inhibit-startup-screen t)
  '(ivy-mode t)
  '(mouse-autoselect-window t)
@@ -26,7 +27,7 @@
    '(("gnu" . "https://elpa.gnu.org/packages/")
      ("melpa" . "https://melpa.org/packages/")))
  '(package-selected-packages
-   '(gnuplot apache-mode markdown-mode flycheck-grammarly pygn-mode org-gtd whitespace-cleanup-mode php-mode elpy yascroll csv-mode use-package ein ##))
+   '(yascroll whitespace-cleanup-mode use-package pygn-mode php-mode org-gtd markdown-mode magit-section gnuplot flycheck-grammarly emacsql-sqlite elpy ein csv-mode apache-mode))
  '(scroll-bar-mode nil)
  '(show-paren-mode t)
  '(tool-bar-mode nil)
