@@ -1,148 +1,142 @@
-;;; init.el --- Initialize Gabriel Szasz's Emacs Environment
-
-;; Copyright (C) 2016, 2017 Gabriel Szasz
-
-;; Author: Gabriel Szasz <gabriel.szasz1@gmail.com>
-;; Version: 1.0
-
+;;; init.el --- My Emacs configuration
+;; Copyright (C) 2016-2017, 2022  Gabriel Szász
+;; SPDX-License-Identifier: GPL-3.0-or-later
+;;
+;; Author: Gabriel Szász <gabriel.szasz1@gmail.com>
+;; Homepage: https://github.com/gszasz/emacs-config
+;;
 ;; This file is not part of GNU Emacs.
-
+;;
 ;; This program is free software: you can redistribute it and/or
 ;; modify it under the terms of the GNU General Public License as
 ;; published by the Free Software Foundation, either version 3 of the
 ;; License, or (at your option) any later version.
-
-;; This program is distributed in the hope that it will be useful,
-;; but WITHOUT ANY WARRANTY; without even the implied warranty of
+;;
+;; This program is distributed in the hope that it will be useful, but
+;; WITHOUT ANY WARRANTY; without even the implied warranty of
 ;; MERCHANTABILITY or FITNESS FOR A PARTICULAR PURPOSE.  See the GNU
 ;; General Public License for more details.
-
+;;
 ;; You should have received a copy of the GNU General Public License
 ;; along with this program.  If not, see
-;; <http://www.gnu.org/licenses/>.
+;; <https://www.gnu.org/licenses/>.
+;;
+;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;
+;;
+;;; Commentary:
+;;
+;; I combine RPM packages with MELPA while prefering Customize for
+;; config whenever possible.
+;;
+;;; Code:
 
-;; Add my lisp directory to load-path
+;; Load my functions
 (add-to-list 'load-path "~/.emacs.d/lisp/")
+(require 'unfill)
+(require 'set-fill-column)
 
-;; Workarounds for 'emacsclient -c' issues (Emacs 25.3.1)
-(when (daemonp)
-  ;; Issue: Custom buffers do not display graphic buttons.
-  (setq custom-raised-buttons t)
-  ;; Issue: Cursor is not blinking.
-  (blink-cursor-mode 1))
+;; List of installed Emacs-related RPM packages:
+;;
+;; emacs-filesystem, emacs-common, emacs, emacs-dash, emacs-deferred,
+;; emacs-with-editor, emacs-async,emacs-ctable, emacs-epc, emacs-epl,
+;; emacs-pkg-info, emacs-flycheck, emacs-json-reformat,
+;; emacs-json-snatcher, emacs-popup, emacs-auto-complete, emacs-s,
+;; emacs-transient, emacs-python-environment, emacs-auctex,
+;; emacs-jedi, emacs-magit, emacs-dockerfile-mode, emacs-json-mode,
+;; emacs-flycheck-pycheckers, emacs-color-theme, emacs-cython-mode,
+;; emacs-gettext, emacs-goodies, emacs-rpm-spec-mode, emacs-yaml-mode
 
-;; Added by Package.el.  This must come before configurations of
-;; installed packages.  Don't delete this line.  If you don't want it,
-;; just comment it out by adding a semicolon to the start of the line.
-;; You may delete these explanatory comments.
-(package-initialize)
+;; Load packages installed via RPM
+(require 'magit)
+(require 'jedi)
 
-;; Load variables & faces added by Custom
-(setq custom-file "~/.emacs.d/custom.el")
-(load custom-file 'noerror)
+;; Configure packages installed via RPM
 
-;; Fill column indicator
-(require 'fill-column-indicator)
+;; Buffer Menu mode
+(add-hook 'buffer-menu-mode-hook #'hl-line-mode)
 
-;; Autocomplete
-(require 'auto-complete)
-
-;; Emacs-Lisp mode
-(add-hook 'emacs-lisp-mode-hook
-          (lambda () (set-fill-column 70)
-            (flyspell-prog-mode)
-            (add-hook 'before-save-hook 'whitespace-cleanup nil t)))
-
-;; YAML mode
-(require 'yaml-mode)
-(add-to-list 'auto-mode-alist '("\\.yml\\'" . yaml-mode))
-(add-hook 'yaml-mode-hook
-          (lambda () (define-key yaml-mode-map (kbd "C-m") 'newline-and-indent)
-            (flyspell-prog-mode)
-            (add-hook 'before-save-hook 'whitespace-cleanup nil t)))
-
-;; CSV mode
-(add-to-list 'auto-mode-alist '("\\.[Cc][Ss][Vv]\\'" . csv-mode))
-(autoload 'csv-mode "csv-mode" "Major mode for editing comma-separated value files." t)
-
-;; MediaWiki mode
-(require 'mediawiki)
-(add-to-list 'auto-mode-alist '("\\.wiki\\'" . mediawiki-mode))
-(add-hook 'mediawiki-mode-hook
-          (lambda () (local-unset-key (kbd "M-g"))
-            (local-unset-key (kbd "C-x C-s"))
-            (remove-hook 'outline-minor-mode-hook 'mediawiki-outline-magic-keys)
-            (flyspell-mode 1)))
-
-;; PYTHON IDE
-(elpy-enable)
-(add-hook 'python-mode-hook
-          (lambda () (fci-mode 1)
-            (flyspell-prog-mode)
-            (add-hook 'before-save-hook 'whitespace-cleanup nil t)))
-
-;; PHP Mode
-(require 'php-mode)
-;; To use abbrev-mode, add lines like this:
-(add-hook 'php-mode-hook
-          (lambda () (define-abbrev php-mode-abbrev-table "ex" "extends")
-            (auto-fill-mode -1)
-            (fci-mode 1)
-            (flyspell-prog-mode)
-            (add-hook 'before-save-hook 'whitespace-cleanup nil t)))
-
-;; GitHub Flavored Markdown Mode
-(autoload 'gfm-mode "markdown-mode" "Major mode for editing GitHub Flavored Markdown files" t)
-(add-to-list 'auto-mode-alist '("\\.md\\'" . gfm-mode))
-(add-hook 'gfm-mode-hook
-          (lambda () (fci-mode 1)
-            (flyspell-mode 1)
-            (add-hook 'before-save-hook 'whitespace-cleanup nil t)))
+;; Package Menu mode
+(add-hook 'package-menu-mode-hook #'hl-line-mode)
 
 ;; AUCTeX mode
-(require 'tex-mode)
-(require 'auto-complete-auctex)
-(TeX-global-PDF-mode t)
-(add-hook 'LaTeX-mode-hook
-      (lambda () (auto-fill-mode -1)
-        (fci-mode 1)
-        (flyspell-mode 1)
-        (add-hook 'before-save-hook 'whitespace-cleanup nil t)))
+(add-hook 'LaTeX-mode-hook #'visual-line-mode)
+(add-hook 'LaTeX-mode-hook #'flycheck-mode)
+(add-hook 'LaTeX-mode-hook #'whitespace-cleanup-mode)
 
-;; Gnuplot mode
-(require 'gnuplot-mode)
-(add-hook 'gnuplot-mode-hook
-          (lambda ()
-            (flyspell-prog-mode)
-            (add-hook 'before-save-hook 'whitespace-cleanup nil t)))
+;; Load and configure MELPA packages
 
-;; Magit mode
-(require 'magit)
-(require 'magit-gerrit)
-(global-set-key (kbd "C-x g") 'magit-status)
-(add-hook 'git-commit-setup-hook
-          (lambda () (flyspell-mode)
-            (fci-mode 1)))
+;; org-gtd mode
+(use-package org-gtd
+  :after org
+  :demand t
+  :custom
+  (org-gtd-mode t)
+  :bind
+  (("C-c d c" . org-gtd-capture)
+   ("C-c d e" . org-gtd-engage)
+   ("C-c d p" . org-gtd-process-inbox)
+   ("C-c d n" . org-gtd-show-all-next)
+   ("C-c d s" . org-gtd-show-stuck-projects)
+   :map org-gtd-process-map
+   ("C-c c" . org-gtd-choose)))
 
-;; Define keys for global clipboard access
-(global-set-key (kbd "S-<delete>") 'clipboard-kill-region)
-(global-set-key (kbd "C-<insert>") 'clipboard-kill-ring-save)
-(global-set-key (kbd "S-<insert>") 'clipboard-yank)
+;; Flycheck-grammarly
+(use-package flycheck-grammarly
+  :after flycheck
+  :config (flycheck-grammarly-setup))
 
-;; Map right mouse button to open mode-specific menu
-(global-set-key [mouse-3] 'mouse-popup-menubar-stuff)
+;; ElPy mode
+(use-package elpy
+  :ensure t
+  :defer t
+  :init (advice-add 'python-mode :before 'elpy-enable)
+  :custom
+  (elpy-mode-hook '(subword-mode display-fill-column-indicator-mode
+		    whitespace-cleanup-mode set-fill-mode-pep8)))
 
-;; Define keys for windmove control
-(global-set-key (kbd "M-s-<left>") 'windmove-left)
-(global-set-key (kbd "M-s-<right>") 'windmove-right)
-(global-set-key (kbd "M-s-<up>") 'windmove-up)
-(global-set-key (kbd "M-s-<down>") 'windmove-down)
+;; PHP mode
+(use-package php-mode
+  :config
+  :custom
+  (php-mode-coding-style 'psr2)
+  (php-mode-hook '(display-fill-column-indicator-mode
+		   flyspell-prog-mode whitespace-cleanup-mode)))
 
-;; Switch to previous window with C-x O
-(global-set-key (kbd "C-x O") (lambda ()
-                                (interactive)
-                                (other-window -1)))
+;; CSV mode
+(use-package csv-mode
+  :custom (csv-header-lines 1))
 
-;; Unfill paragraph with s-q
-(require 'unfill)
-(global-set-key (kbd "s-q") 'unfill-paragraph)
+;; Markdown mode
+(use-package markdown-mode
+  :hook ((markdown-mode . display-fill-column-indicator-mode)
+	 (markdown-mode . whitespace-cleanup-mode)))
+
+;; PyGN mode
+(use-package pygn-mode
+  :bind (:map pygn-mode-map
+	      ("C-c C-n" . pygn-mode-next-game)
+	      ("C-c C-p" . pygn-mode-previous-game)
+	      ("M-f" . pygn-mode-next-move-follow-board)
+	      ("M-b" . pygn-mode-previous-move-follow-board)
+	      ("C-c SPC". pygn-mode-display-gui-board-at-pos)
+	      ("C-h $" . pygn-mode-describe-annotation-at-pos))
+  :hook ((pygn-mode . whitespace-cleanup-mode)
+	 (pygn-mode . visual-line-mode))
+  :custom
+  (pygn-mode-pythonpath
+   (first
+    (file-expand-wildcards
+     "~/.emacs.d/elpa/pygn-mode-*/lib/python/site-packages" t))))
+  
+;; YaScroll
+(use-package yascroll
+  :custom  (global-yascroll-bar-mode t)
+  :custom-face
+  (yascroll:thumb-fringe ((t (:background "gray62"
+			      :foreground "gray62"))))
+  (yascroll:thumb-text-area ((t (:background "gray62")))))
+
+;; Load options set through Custom
+(load "~/.emacs.d/custom.el")
+
+;;; init.el ends here

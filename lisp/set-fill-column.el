@@ -1,13 +1,9 @@
-;;; unfill.el --- set of functions for unfilling paragraphs
+;;; set-fill-column.el --- functions to quick set ‘fill-column’ value
 
-;; Copyright (C) 2016-2017, 2022  Gabriel Szász
+;; Copyright (C) 2022  Gabriel Szász
 ;; SPDX-License-Identifier: GPL-3.0-or-later
-;; Based on code at Emacs Wiki:
-;; <https://www.emacswiki.org/emacs/UnfillParagraph>
-;;   Copyright (C) 2018  Tom Baker
-;;   Original Author: Stefan Monnier
 
-;; Author: Gabriel Szász 
+;; Author: Gabriel Szász
 ;; Version: 2.0
 
 ;; This file is not part of GNU Emacs.
@@ -26,15 +22,20 @@
 ;; along with this program.  If not, see
 ;; <https://www.gnu.org/licenses/>.
 
-(defun unfill-paragraph (&optional region)
-  "Takes a multi-line paragraph and makes it into a single line
-    of text."
-  (interactive (progn (barf-if-buffer-read-only) '(t)))
-  (let ((fill-column (point-max))
-    ;; This would override `fill-column' if it's an integer.
-    (emacs-lisp-docstring-fill-column t))
-    (fill-paragraph nil region)))
+(defun set-fill-column-default ()
+  "Set ‘fill-column’ to default value."
+  (set-fill-column 80))
 
-(define-key global-map "\M-Q" 'unfill-paragraph)
+(defun set-fill-column-lisp ()
+  "Set ‘fill-column’ to common value for Lisp programming."
+  (set-fill-column 70))
 
-(provide 'unfill)
+(defun set-fill-column-pep8 ()
+  "Set ‘fill-column’ to a value following PEP 8 standard."
+  (set-fill-column 79))
+
+(defun set-fill-column-git-commit ()
+  "Set ‘fill-column’ to a value following PEP 8 standard."
+  (set-fill-column 72))
+
+(provide 'set-fill-column)

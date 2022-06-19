@@ -1,38 +1,41 @@
-;;; custom.el --- Load variables & faces added by Custom
-
 (custom-set-variables
  ;; custom-set-variables was added by Custom.
  ;; If you edit it by hand, you could mess it up, so be careful.
  ;; Your init file should contain only one such instance.
  ;; If there is more than one, they won't work right.
- '(calendar-week-start-day 1)
+ '(before-save-hook '(copyright-update))
+ '(blink-cursor-mode t)
  '(column-number-mode t)
- '(custom-enabled-themes (quote (deeper-blue)))
- '(fci-rule-color "#3E4451")
+ '(copyright-year-ranges t)
+ '(csv-header-lines 1)
+ '(custom-enabled-themes '(adwaita))
+ '(custom-file "~/.emacs.d/custom.el")
+ '(dired-mode-hook '(hl-line-mode))
+ '(emacs-lisp-mode-hook
+   '(eldoc-mode flyspell-prog-mode whitespace-cleanup-mode set-fill-column-lisp))
  '(fill-column 80)
- '(git-commit-fill-column 72)
+ '(git-commit-setup-hook
+   '(git-commit-save-message git-commit-setup-changelog-support git-commit-turn-on-auto-fill git-commit-turn-on-flyspell git-commit-propertize-diff bug-reference-mode with-editor-usage-message display-fill-column-indicator-mode set-fill-column-git-commit))
  '(git-commit-summary-max-length 50)
- '(global-hl-line-mode t)
- '(ido-mode (quote both) nil (ido))
- '(indent-tabs-mode nil)
- '(indicate-buffer-boundaries (quote right))
+ '(global-yascroll-bar-mode t)
  '(inhibit-startup-screen t)
- '(menu-bar-mode nil)
+ '(ivy-mode t)
+ '(mouse-autoselect-window t)
+ '(org-babel-load-languages '((emacs-lisp . t) (shell . t)))
  '(package-archives
-   (quote
-    (("gnu" . "http://elpa.gnu.org/packages/")
-     ("melpa" . "https://melpa.org/packages/"))))
+   '(("gnu" . "https://elpa.gnu.org/packages/")
+     ("melpa" . "https://melpa.org/packages/")))
  '(package-selected-packages
-   (quote
-    (auctex auctex-latexmk auto-complete auto-complete-auctex csv-mode ebib elpy fill-column-indicator gnuplot-mode logview magit magit-gerrit markdown-mode mediawiki php-mode yaml-mode)))
+   '(gnuplot apache-mode markdown-mode flycheck-grammarly pygn-mode org-gtd whitespace-cleanup-mode php-mode elpy yascroll csv-mode use-package ein ##))
+ '(scroll-bar-mode nil)
  '(show-paren-mode t)
- '(tab-width 4)
  '(tool-bar-mode nil)
- '(uniquify-buffer-name-style (quote forward) nil (uniquify)))
-
+ '(yaml-mode-hook
+   '(yaml-set-imenu-generic-expression flyspell-prog-mode whitespace-cleanup-mode)))
 (custom-set-faces
  ;; custom-set-faces was added by Custom.
  ;; If you edit it by hand, you could mess it up, so be careful.
  ;; Your init file should contain only one such instance.
  ;; If there is more than one, they won't work right.
- )
+ '(yascroll:thumb-fringe ((t (:background "gray62" :foreground "gray62"))))
+ '(yascroll:thumb-text-area ((t (:background "gray62")))))

@@ -1,74 +1,115 @@
 # My personal Emacs config
 
-The configuration is valid for GNU Emacs 25.3.1 compiled from source code and
-installed into `/usr/local` prefix.
-
+The configuration is valid for GNU Emacs 27.2.1 installed from RPMs. 
 
 ## Installation
 
+### RPM Packages
+
+* emacs
+* emacs-common
+* emacs-filesystem
+* emacs-dash
+* emacs-deferred
+* emacs-with-editor
+* emacs-async
+* emacs-ctable
+* emacs-epc
+* emacs-epl
+* emacs-pkg-info
+* emacs-flycheck
+* emacs-json-reformat
+* emacs-json-snatcher
+* emacs-popup
+* emacs-auto-complete
+* emacs-s
+* emacs-transient
+* emacs-python-environment
+* emacs-auctex
+* emacs-jedi
+* emacs-magit
+* emacs-dockerfile-mode
+* emacs-json-mode
+* emacs-color-theme
+* emacs-cython-mode
+* emacs-gettext
+* emacs-goodies
+* emacs-rpm-spec-mode
+* emacs-yaml-mode
+
+In Fedora 36, you can install all RPMs above by following command:
+
+```shell
+sudo dnf install emacs emacs-common emacs-filesystem emacs-dash emacs-deferred \
+  emacs-with-editor emacs-async emacs-ctable emacs-epc emacs-epl \
+  emacs-pkg-info emacs-flycheck emacs-json-reformat emacs-json-snatcher \
+  emacs-popup emacs-auto-complete emacs-s emacs-transient \
+  emacs-python-environment emacs-auctex emacs-jedi emacs-magit \
+  emacs-dockerfile-mode emacs-json-mode emacs-color-theme emacs-cython-mode \
+  emacs-gettext emacs-goodies emacs-rpm-spec-mode emacs-yaml-mode
+```
+
+### Configuration files
+
 The contents of the repo is supposed to be cloned into the `~/.emacs.d`
-directory.
-
-```
-git clone git@github.com:gszasz/dotemacs.git ~/.emacs.d
-```
-
-Remove existing `~/.emacs` file in order to force Emacs to load
+directory and remove existing `~/.emacs` file to force Emacs to load
 `~/.emacs.d/init.el` file instead.
 
-
-### X resources
-
-It was quite annoying to see glitching during Emacs startup, when I was able to
-see menubar, toolbar scrollbar and light backround for a fraction of second
-before reading my `~/.emacs.d/init.el` file where those GUI elements were set up
-properly.  I figured out that the only way how to tell Emacs to turn off
-menubar, toolbar and scroll bar 'prior' reading my initialization config file is
-to do it via X resources.  My `Xresources` file matches `deeper-blue` theme and
-indeed my Emacs starts without any glitching.
-
-You might want to put those settings into your `~/.Xresources` file.
-
-```
-cat ~/.emacs.d/Xresources >> ~/.Xresources
+```shell
+git clone git@github.com:gszasz/emacs-config.git ~/.emacs.d
+rm ~/.emacs
 ```
 
-I am having these settings integrated in my [.i3/Xresources](doti3/blob/master/Xresources).
+### MELPA packages
+
+* apache-mode
+* csv-mode
+* ein
+* elpy
+* flycheck-grammarly
+* gnuplot
+* markdown-mode
+* org-gtd
+* php-mode
+* pygn-mode
+* use-package
+* whitespace-cleanup-mode
+* yascroll
+
+You can launch Emacs now and run to install all required MELPA packages 
+`M-x package-install-selected-packages<RET>`
 
 
 ### Emacs daemon
 
-The best practice how to optimize Emacs startup is to start it as a daemon.  I
-prefer to start Emacs daemon as `systemd` service, because then it is very easy
-to reload new configuration.
+The only convenient use of Emacs is to use its built-in client-server
+architecture.  I strongly recommend to enable and start Emacs daemon and then
+use `emacsclient` command instead of `emacs`.
 
-If you want to start Emacs daemon as systemd service, just copy the unit file to
-`~/.config/systemd/user` directory.  It is very important to copy it, because
-systemd does not follow symbolic links.
-
-```
-cp ~/.emacs.d/emacs.service ~/.config/systemd/user/
+```shell
 systemctl --user enable emacs
 systemctl --user start emacs
 ```
 
-## Installed MELPA Packages
+Note you need to run following command each time you alter configuration to
+convince yourself that you did not break anything.
 
-I currently use the following MELPA packages.
+```shell
+systemctl --user restart emacs
+```
 
-* auctex
-* auctex-latexmk
-* auto-complete
-* auto-complete-auctex
-* csv-mode
-* ebib
-* elpy
-* fill-column-indicator
-* gnuplot-mode
-* logview
-* magit
-* magit-gerrit
-* markdown-mode
-* mediawiki
-* php-mode
-* yaml-mode
+## License
+
+This file is not part of GNU Emacs.
+
+This program is free software: you can redistribute it and/or modify it under
+the terms of the GNU General Public License as published by the Free Software
+Foundation, either version 3 of the License, or (at your option) any later
+version.
+
+This program is distributed in the hope that it will be useful, but WITHOUT ANY
+WARRANTY; without even the implied warranty of MERCHANTABILITY or FITNESS FOR A
+PARTICULAR PURPOSE.  See the GNU General Public License for more details.
+
+You should have received a copy of the GNU General Public License along with
+this program.  If not, see <https://www.gnu.org/licenses/>.
