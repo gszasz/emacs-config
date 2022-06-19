@@ -23,6 +23,7 @@ tramp
 uci-mode-history.txt
 
 # session files
+/session*
 /.emacs.desktop*
 
 # bookmarks
