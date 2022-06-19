@@ -4,22 +4,29 @@ auto-save-list/
 # MELPA packages
 elpa/
 
-# eshell temporary files
-eshell
+# ElPy virtual env
+elpy/
 
-# dired thumbnails
-thumbs
-image-dired
+# requests
+request/
+
+# transient files
+transient/
+
+# eshell history
+eshell/history
 
 # tramp connection history
 tramp
 
+# uci-mode history
+uci-mode-history.txt
+
 # session files
-/session.*
 /.emacs.desktop*
 
-# ido-mode history
-/ido.last
+# bookmarks
+/bookmarks
 
 # backup files
 *~
