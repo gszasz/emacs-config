@@ -66,8 +66,10 @@ rm ~/.emacs
 * csv-mode
 * ein
 * elpy
+* emacsql-sqlite
 * flycheck-grammarly
 * gnuplot
+* magit-section
 * markdown-mode
 * org-gtd
 * php-mode
