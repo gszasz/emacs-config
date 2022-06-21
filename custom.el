@@ -14,6 +14,7 @@
  '(emacs-lisp-mode-hook
    '(eldoc-mode flyspell-prog-mode whitespace-cleanup-mode set-fill-column-lisp))
  '(fill-column 80)
+ '(font-use-system-font t)
  '(git-commit-setup-hook
    '(git-commit-save-message git-commit-setup-changelog-support git-commit-turn-on-auto-fill git-commit-turn-on-flyspell git-commit-propertize-diff bug-reference-mode with-editor-usage-message display-fill-column-indicator-mode set-fill-column-git-commit))
  '(git-commit-summary-max-length 50)
