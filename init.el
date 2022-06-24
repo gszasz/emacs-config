@@ -43,8 +43,8 @@
 ;; emacs-json-snatcher, emacs-popup, emacs-auto-complete, emacs-s,
 ;; emacs-transient, emacs-python-environment, emacs-auctex,
 ;; emacs-jedi, emacs-magit, emacs-dockerfile-mode, emacs-json-mode,
-;; emacs-flycheck-pycheckers, emacs-color-theme, emacs-cython-mode,
-;; emacs-gettext, emacs-goodies, emacs-rpm-spec-mode, emacs-yaml-mode
+;; emacs-flycheck-pycheckers, emacs-cython-mode, emacs-gettext,
+;; emacs-goodies, emacs-rpm-spec-mode, emacs-yaml-mode
 
 ;; Load packages installed via RPM
 (require 'magit)

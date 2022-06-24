@@ -29,7 +29,6 @@ The configuration is valid for GNU Emacs 27.2.1 installed from RPMs.
 * emacs-magit
 * emacs-dockerfile-mode
 * emacs-json-mode
-* emacs-color-theme
 * emacs-cython-mode
 * emacs-gettext
 * emacs-goodies
@@ -44,8 +43,8 @@ sudo dnf install emacs emacs-filesystem emacs-dash emacs-deferred \
   emacs-pkg-info emacs-flycheck emacs-json-reformat emacs-json-snatcher \
   emacs-popup emacs-auto-complete emacs-s emacs-transient \
   emacs-python-environment emacs-auctex emacs-jedi emacs-magit \
-  emacs-dockerfile-mode emacs-json-mode emacs-color-theme emacs-cython-mode \
-  emacs-gettext emacs-goodies emacs-rpm-spec-mode emacs-yaml-mode
+  emacs-dockerfile-mode emacs-json-mode emacs-cython-mode emacs-gettext \
+  emacs-goodies emacs-rpm-spec-mode emacs-yaml-mode
 ```
 
 ### Configuration files
