@@ -124,10 +124,10 @@
 	 (pygn-mode . visual-line-mode))
   :custom
   (pygn-mode-pythonpath
-   (nth 0
-    (file-expand-wildcards
-     "~/.emacs.d/elpa/pygn-mode-*/lib/python/site-packages" t))))
-  
+   (concat "~/.emacs.d/elpa/pygn-mode-"
+           (mapconcat 'number-to-string (pkg-info-package-version 'pygn-mode) ".")
+           "/lib/python/site-packages"))
+
 ;; YaScroll
 (use-package yascroll
   :custom  (global-yascroll-bar-mode t)
