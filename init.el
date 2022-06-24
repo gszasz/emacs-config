@@ -124,7 +124,7 @@
 	 (pygn-mode . visual-line-mode))
   :custom
   (pygn-mode-pythonpath
-   (first
+   (nth 0
     (file-expand-wildcards
      "~/.emacs.d/elpa/pygn-mode-*/lib/python/site-packages" t))))
   
