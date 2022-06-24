@@ -92,7 +92,7 @@
   :init (advice-add 'python-mode :before 'elpy-enable)
   :custom
   (elpy-mode-hook '(subword-mode display-fill-column-indicator-mode
-		    whitespace-cleanup-mode set-fill-mode-pep8)))
+		    whitespace-cleanup-mode set-fill-column-pep8)))
 
 ;; PHP mode
 (use-package php-mode
