@@ -123,10 +123,15 @@
   :hook ((pygn-mode . whitespace-cleanup-mode)
 	 (pygn-mode . visual-line-mode))
   :custom
+  ;; pygn-mode-pythonpath is not automatically updated after pygn-mode
+  ;; package update.  To workaround this issue I set the variable
+  ;; here.
   (pygn-mode-pythonpath
-   (concat "~/.emacs.d/elpa/pygn-mode-"
-           (mapconcat 'number-to-string (pkg-info-package-version 'pygn-mode) ".")
-           "/lib/python/site-packages"))
+   (concat (getenv "HOME")
+           "/.emacs.d/elpa/pygn-mode-"
+           (mapconcat 'number-to-string
+                      (pkg-info-package-version 'pygn-mode) ".")
+           "/lib/python/site-packages/")))
 
 ;; YaScroll
 (use-package yascroll
