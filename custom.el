@@ -3,6 +3,7 @@
  ;; If you edit it by hand, you could mess it up, so be careful.
  ;; Your init file should contain only one such instance.
  ;; If there is more than one, they won't work right.
+ '(TeX-save-query nil)
  '(before-save-hook '(copyright-update))
  '(blink-cursor-mode t)
  '(column-number-mode t)
