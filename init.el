@@ -111,6 +111,10 @@
   :hook ((markdown-mode . display-fill-column-indicator-mode)
 	 (markdown-mode . whitespace-cleanup-mode)))
 
+;; Syslog mode
+(use-package syslog-mode
+  :mode ("\\/var/log/.*\\'" . syslog-mode))
+
 ;; PyGN mode
 (use-package pygn-mode
   :bind (:map pygn-mode-map

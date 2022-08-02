@@ -29,7 +29,7 @@
    '(("gnu" . "https://elpa.gnu.org/packages/")
      ("melpa" . "https://melpa.org/packages/")))
  '(package-selected-packages
-   '(yascroll whitespace-cleanup-mode use-package pygn-mode php-mode org-gtd markdown-mode magit-section gnuplot flycheck-grammarly emacsql-sqlite elpy ein csv-mode apache-mode))
+   '(yascroll whitespace-cleanup-mode use-package syslog-mode realgud pygn-mode project php-mode org-gtd logview flymake-easy flycheck-grammarly elpy eldoc ein dap-mode csv-mode apache-mode))
  '(scroll-bar-mode nil)
  '(show-paren-mode t)
  '(tool-bar-mode nil)
