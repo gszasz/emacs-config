@@ -4,6 +4,9 @@ auto-save-list/
 # MELPA packages
 elpa/
 
+# eln cache
+eln-cache/
+
 # ElPy virtual env
 elpy/
 
