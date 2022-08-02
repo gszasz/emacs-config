@@ -1,6 +1,6 @@
 # My personal Emacs config
 
-The configuration is valid for GNU Emacs 27.2.1 installed from RPMs. 
+The configuration is valid for GNU Emacs 28.1 installed from RPMs.
 
 ## Installation
 
@@ -22,13 +22,13 @@ The configuration is valid for GNU Emacs 27.2.1 installed from RPMs.
 * emacs-popup
 * emacs-auto-complete
 * emacs-s
-* emacs-transient
 * emacs-python-environment
 * emacs-auctex
 * emacs-jedi
 * emacs-magit
 * emacs-dockerfile-mode
 * emacs-json-mode
+* emacs-flycheck-pycheckers
 * emacs-cython-mode
 * emacs-gettext
 * emacs-goodies
@@ -38,13 +38,13 @@ The configuration is valid for GNU Emacs 27.2.1 installed from RPMs.
 In Fedora 36, you can install all RPMs above by following command:
 
 ```shell
-sudo dnf install emacs emacs-filesystem emacs-dash emacs-deferred \
+sudo dnf -y install emacs emacs-filesystem emacs-dash emacs-deferred \
   emacs-with-editor emacs-async emacs-ctable emacs-epc emacs-epl \
   emacs-pkg-info emacs-flycheck emacs-json-reformat emacs-json-snatcher \
-  emacs-popup emacs-auto-complete emacs-s emacs-transient \
-  emacs-python-environment emacs-auctex emacs-jedi emacs-magit \
-  emacs-dockerfile-mode emacs-json-mode emacs-cython-mode emacs-gettext \
-  emacs-goodies emacs-rpm-spec-mode emacs-yaml-mode
+  emacs-popup emacs-auto-complete emacs-s emacs-python-environment \
+  emacs-auctex emacs-jedi emacs-magit emacs-dockerfile-mode emacs-json-mode \
+  emacs-flycheck-pycheckers emacs-cython-mode emacs-gettext emacs-goodies \
+  emacs-rpm-spec-mode emacs-yaml-mode
 ```
 
 ### Configuration files
@@ -62,21 +62,21 @@ rm ~/.emacs
 
 * apache-mode
 * csv-mode
+* dap-mode
 * ein
+* eldoc
 * elpy
-* emacsql-sqlite
 * flycheck-grammarly
-* gnuplot
-* magit-section
-* markdown-mode
+* logview
 * org-gtd
 * php-mode
 * pygn-mode
+* syslog-mode
 * use-package
 * whitespace-cleanup-mode
 * yascroll
 
-You can launch Emacs now and run to install all required MELPA packages 
+You can launch Emacs now and run to install all required MELPA packages
 `M-x package-install-selected-packages<RET>`
 
 
