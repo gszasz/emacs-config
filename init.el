@@ -96,7 +96,6 @@
 
 ;; PHP mode
 (use-package php-mode
-  :config
   :custom
   (php-mode-coding-style 'psr2)
   (php-mode-hook '(display-fill-column-indicator-mode
