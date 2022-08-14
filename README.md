@@ -62,12 +62,13 @@ rm ~/.emacs
 
 * apache-mode
 * csv-mode
-* dap-mode
 * ein
-* eldoc
 * elpy
 * flycheck-grammarly
-* logview
+* gnuplot
+* ivy-bibtex
+* magit-section
+* markdown-mode
 * org-gtd
 * php-mode
 * pygn-mode
