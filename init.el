@@ -37,14 +37,13 @@
 
 ;; List of installed Emacs-related RPM packages:
 ;;
-;; emacs-filesystem, emacs-common, emacs, emacs-dash, emacs-deferred,
-;; emacs-with-editor, emacs-async,emacs-ctable, emacs-epc, emacs-epl,
+;; emacs emacs-filesystem, emacs-dash, emacs-deferred,
+;; emacs-with-editor, emacs-async, emacs-ctable, emacs-epc, emacs-epl,
 ;; emacs-pkg-info, emacs-flycheck, emacs-json-reformat,
 ;; emacs-json-snatcher, emacs-popup, emacs-auto-complete, emacs-s,
-;; emacs-transient, emacs-python-environment, emacs-auctex,
-;; emacs-jedi, emacs-magit, emacs-dockerfile-mode, emacs-json-mode,
-;; emacs-flycheck-pycheckers, emacs-cython-mode, emacs-gettext,
-;; emacs-goodies, emacs-rpm-spec-mode, emacs-yaml-mode
+;; emacs-python-environment, emacs-auctex, emacs-jedi, emacs-magit,
+;; emacs-dockerfile-mode, emacs-json-mode, emacs-cython-mode,
+;; emacs-gettext, emacs-goodies, emacs-rpm-spec-mode, emacs-yaml-mode
 
 ;; Load packages installed via RPM
 (require 'magit)
