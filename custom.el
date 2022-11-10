@@ -7,6 +7,7 @@
  '(TeX-save-query nil)
  '(before-save-hook '(copyright-update))
  '(blink-cursor-mode t)
+ '(calendar-week-start-day 1)
  '(column-number-mode t)
  '(copyright-year-ranges t)
  '(csv-header-lines 1)
