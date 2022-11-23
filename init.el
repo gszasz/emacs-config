@@ -32,8 +32,9 @@
 
 ;; Load my functions
 (add-to-list 'load-path "~/.emacs.d/lisp/")
-(require 'unfill)
+(require 'ansible-extras)
 (require 'set-fill-column)
+(require 'unfill)
 
 ;; List of installed Emacs-related RPM packages:
 ;;
@@ -46,8 +47,9 @@
 ;; emacs-with-editor emacs-yaml-mode
 
 ;; Load packages installed via RPM
-(require 'magit)
+(require 'ansible)
 (require 'jedi)
+(require 'magit)
 
 ;; Configure packages installed via RPM
 

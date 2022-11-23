@@ -36,7 +36,7 @@
  '(show-paren-mode t)
  '(tool-bar-mode nil)
  '(yaml-mode-hook
-   '(yaml-set-imenu-generic-expression flyspell-prog-mode whitespace-cleanup-mode)))
+   '(yaml-set-imenu-generic-expression flyspell-prog-mode whitespace-cleanup-mode smart-ansible-mode)))
 (custom-set-faces
  ;; custom-set-faces was added by Custom.
  ;; If you edit it by hand, you could mess it up, so be careful.
