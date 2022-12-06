@@ -60,7 +60,7 @@
 (add-hook 'package-menu-mode-hook #'hl-line-mode)
 
 ;; Bookmark Menu mode
-(add-hook 'bookmark-menu-mode-hook #'hl-line-mode)
+(add-hook 'bookmark-bmenu-mode-hook #'hl-line-mode)
 
 ;; AUCTeX mode
 (add-hook 'LaTeX-mode-hook #'visual-line-mode)
