@@ -1,5 +1,5 @@
 ;;; init.el --- My Emacs configuration
-;; Copyright (C) 2016-2017, 2022  Gabriel Szász
+;; Copyright (C) 2016-2017, 2022, 2023  Gabriel Szász
 ;; SPDX-License-Identifier: GPL-3.0-or-later
 ;;
 ;; Author: Gabriel Szász <gabriel.szasz1@gmail.com>
@@ -30,8 +30,14 @@
 ;;
 ;;; Code:
 
+;; Global key bindings
+
+;; Set C-x k to kill current buffer
+(global-set-key (kbd "C-x k") 'kill-this-buffer)
+
 ;; Load my functions
 (add-to-list 'load-path "~/.emacs.d/lisp/")
+(require 'org-extras)
 (require 'ansible-extras)
 (require 'set-fill-column)
 (require 'unfill)
@@ -66,6 +72,10 @@
 (add-hook 'LaTeX-mode-hook #'visual-line-mode)
 (add-hook 'LaTeX-mode-hook #'flycheck-mode)
 (add-hook 'LaTeX-mode-hook #'whitespace-cleanup-mode)
+
+;; Org mode
+(add-hook 'org-mode-hook #'setup-table-highlighting)
+(add-hook 'orgtbl-mode-hook #'setup-table-highlighting)
 
 ;; Load and configure MELPA packages
 
