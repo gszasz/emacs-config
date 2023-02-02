@@ -1,6 +1,9 @@
 # auto saved files
 auto-save-list/
 
+# Cache
+.cache/
+
 # MELPA packages
 elpa/
 
