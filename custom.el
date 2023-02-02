@@ -14,6 +14,7 @@
  '(custom-enabled-themes '(adwaita))
  '(custom-file "~/.emacs.d/custom.el")
  '(dired-mode-hook '(hl-line-mode))
+ '(ein:output-area-inlined-images t)
  '(emacs-lisp-mode-hook
    '(eldoc-mode flyspell-prog-mode whitespace-cleanup-mode set-fill-column-lisp))
  '(fill-column 80)
