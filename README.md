@@ -57,11 +57,11 @@ rm ~/.emacs
 
 ### MELPA packages
 
-* apache-mode
+* adaptive-wrap
+* apache-modesor
 * csv-mode
 * ein
 * elpy
-* flycheck-grammarly
 * gnuplot
 * ivy-bibtex
 * magit-section
@@ -71,6 +71,7 @@ rm ~/.emacs
 * pygn-mode
 * syslog-mode
 * use-package
+* visual-fill-column
 * whitespace-cleanup-mode
 * yascroll
 
