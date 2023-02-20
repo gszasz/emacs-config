@@ -5,6 +5,7 @@
  ;; If there is more than one, they won't work right.
  '(TeX-parse-self t)
  '(TeX-save-query nil)
+ '(TeX-source-correlate-mode t)
  '(before-save-hook '(copyright-update))
  '(blink-cursor-mode t)
  '(calendar-week-start-day 1)
