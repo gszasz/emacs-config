@@ -1,5 +1,5 @@
 ;;; init.el --- My Emacs configuration
-;; Copyright (C) 2016-2017, 2022, 2023  Gabriel Szász
+;; Copyright (C) 2016-2017, 2022-2023  Gabriel Szász
 ;; SPDX-License-Identifier: GPL-3.0-or-later
 ;;
 ;; Author: Gabriel Szász <gabriel.szasz1@gmail.com>
@@ -25,7 +25,7 @@
 ;;
 ;;; Commentary:
 ;;
-;; I combine RPM packages with MELPA while prefering Customize for
+;; I combine RPM packages with MELPA while preferring Customize for
 ;; config whenever possible.
 ;;
 ;;; Code:
@@ -57,7 +57,7 @@
 ;; Configure packages installed via RPM
 
 ;; Buffer Menu mode
-(add-hook 'buffer-menu-mode-hook #'hl-line-mode)
+(add-hook 'Buffer-menu-mode-hook #'hl-line-mode)
 
 ;; Package Menu mode
 (add-hook 'package-menu-mode-hook #'hl-line-mode)
@@ -126,39 +126,45 @@
   :init (advice-add 'python-mode :before 'elpy-enable)
   :custom
   (elpy-mode-hook '(subword-mode display-fill-column-indicator-mode
-		    whitespace-cleanup-mode set-fill-column-pep8)))
+                    set-fill-column-pep8)))
 
 ;; PHP mode
 (use-package php-mode
+  :ensure t
   :custom
   (php-mode-coding-style 'psr2)
   (php-mode-hook '(display-fill-column-indicator-mode
-		   flyspell-prog-mode whitespace-cleanup-mode)))
+                   flyspell-prog-mode)))
 
 ;; CSV mode
 (use-package csv-mode
-  :custom (csv-header-lines 1))
+  :ensure t
+  :custom (csv-header-lines 1)
+  :hook ((csv-mode . hl-line-mode)
+         (csv-mode . stripes-mode)))
 
 ;; Markdown mode
 (use-package markdown-mode
+  :ensure t
   :hook ((markdown-mode . display-fill-column-indicator-mode)
-	 (markdown-mode . whitespace-cleanup-mode)))
+         (markdown-mode . whitespace-cleanup-mode)))
 
 ;; Syslog mode
 (use-package syslog-mode
+  :ensure t
   :mode ("\\/var/log/.*\\'" . syslog-mode))
 
 ;; PyGN mode
 (use-package pygn-mode
+  :ensure t
   :bind (:map pygn-mode-map
-	      ("C-c C-n" . pygn-mode-next-game)
-	      ("C-c C-p" . pygn-mode-previous-game)
-	      ("M-f" . pygn-mode-next-move-follow-board)
-	      ("M-b" . pygn-mode-previous-move-follow-board)
-	      ("C-c SPC". pygn-mode-display-gui-board-at-pos)
-	      ("C-h $" . pygn-mode-describe-annotation-at-pos))
-  :hook ((pygn-mode . whitespace-cleanup-mode)
-	 (pygn-mode . visual-line-mode))
+              ("C-c C-n" . pygn-mode-next-game)
+              ("C-c C-p" . pygn-mode-previous-game)
+              ("M-f" . pygn-mode-next-move-follow-board)
+              ("M-b" . pygn-mode-previous-move-follow-board)
+              ("C-c SPC". pygn-mode-display-gui-board-at-pos)
+              ("C-h $" . pygn-mode-describe-annotation-at-pos))
+  :hook (pygn-mode . visual-line-mode)
   :custom
   ;; pygn-mode-pythonpath is not automatically updated after pygn-mode
   ;; package update.  To workaround this issue I set the variable
@@ -172,10 +178,11 @@
 
 ;; YaScroll
 (use-package yascroll
+  :ensure t
   :custom  (global-yascroll-bar-mode t)
   :custom-face
   (yascroll:thumb-fringe ((t (:background "gray62"
-			      :foreground "gray62"))))
+                              :foreground "gray62"))))
   (yascroll:thumb-text-area ((t (:background "gray62")))))
 
 ;; Load options set through Custom
