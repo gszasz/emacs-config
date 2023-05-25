@@ -6,6 +6,7 @@
  '(TeX-parse-self t)
  '(TeX-save-query nil)
  '(TeX-source-correlate-mode t)
+ '(alert-default-style 'libnotify)
  '(before-save-hook '(copyright-update))
  '(blink-cursor-mode t)
  '(calendar-week-start-day 1)
@@ -14,6 +15,7 @@
  '(csv-header-lines 1)
  '(custom-enabled-themes '(adwaita))
  '(custom-file "~/.emacs.d/custom.el")
+ '(cython-default-compile-format "python setup.py build_ext --inplace")
  '(dired-mode-hook '(hl-line-mode))
  '(ein:output-area-inlined-images t)
  '(emacs-lisp-mode-hook
@@ -23,17 +25,22 @@
  '(git-commit-setup-hook
    '(git-commit-save-message git-commit-setup-changelog-support git-commit-turn-on-auto-fill git-commit-turn-on-flyspell git-commit-propertize-diff bug-reference-mode with-editor-usage-message display-fill-column-indicator-mode set-fill-column-git-commit))
  '(git-commit-summary-max-length 50)
+ '(global-whitespace-cleanup-mode t)
  '(global-yascroll-bar-mode t)
  '(indent-tabs-mode nil)
  '(inhibit-startup-screen t)
+ '(ispell-dictionary "en_US")
  '(ivy-mode t)
  '(mouse-autoselect-window t)
  '(org-babel-load-languages '((emacs-lisp . t) (shell . t)))
+ '(org-gtd-clarify-mode-hook
+   '(set-fill-column-org-gtd display-fill-column-indicator-mode auto-fill-mode))
  '(package-archives
    '(("gnu" . "https://elpa.gnu.org/packages/")
      ("melpa" . "https://melpa.org/packages/")))
  '(package-selected-packages
-   '(adaptive-wrap apache-modesor csv-mode ein elpy gnuplot ivy-bibtex magit-section markdown-mode org-gtd php-mode pygn-mode syslog-mode use-package visual-fill-column whitespace-cleanup-mode yascroll)
+   '(adaptive-wrap apache-mode csv-mode ein elpy flyspell-correct-ivy gnuplot ivy-bibtex magit-section markdown-mode olivetti org-gtd org-remark php-mode pygn-mode stripes syslog-mode use-package visual-fill-column whitespace-cleanup-mode yascroll))
+ '(safe-local-variable-values '((bibtex-dialect . biblatex)))
  '(scroll-bar-mode nil)
  '(show-paren-mode t)
  '(tool-bar-mode nil)

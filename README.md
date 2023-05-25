@@ -41,17 +41,21 @@ rm ~/.emacs
 ### MELPA packages
 
 * adaptive-wrap
-* apache-modesor
+* apache-mode
 * csv-mode
 * ein
 * elpy
+* flyspell-correct-ivy
 * gnuplot
 * ivy-bibtex
 * magit-section
 * markdown-mode
+* olivetti
 * org-gtd
+* org-remark
 * php-mode
 * pygn-mode
+* stripes
 * syslog-mode
 * use-package
 * visual-fill-column
