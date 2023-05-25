@@ -28,6 +28,9 @@ tramp
 # uci-mode history
 uci-mode-history.txt
 
+# org-mode locations
+/.org-id-locations
+
 # session files
 /session*
 /.emacs.desktop*
