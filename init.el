@@ -66,35 +66,58 @@
 (add-hook 'bookmark-bmenu-mode-hook #'hl-line-mode)
 
 ;; AUCTeX mode
+(add-hook 'LaTeX-mode-hook #'flyspell-mode)
 (add-hook 'LaTeX-mode-hook #'visual-line-mode)
-(add-hook 'LaTeX-mode-hook #'flycheck-mode)
-(add-hook 'LaTeX-mode-hook #'whitespace-cleanup-mode)
+(add-hook 'LaTeX-mode-hook #'adaptive-wrap-prefix-mode)
+(add-hook 'LaTeX-mode-hook #'turn-on-reftex)
+(setq reftex-plug-into-AUCTeX t)
 
 ;; Org mode
+(add-hook 'org-mode-hook #'flyspell-mode)
+(add-hook 'org-mode-hook #'org-remark-mode)
 (add-hook 'org-mode-hook #'setup-table-highlighting)
 (add-hook 'orgtbl-mode-hook #'setup-table-highlighting)
 
 ;; Load and configure MELPA packages
 
+(use-package whitespace-cleanup-mode
+  :ensure t
+  :custom
+  (global-whitespace-cleanup-mode t))
+
+;; flyspell-correct-ivy
+(use-package flyspell-correct-ivy
+  :ensure t
+  :bind ("C-M-;" . flyspell-correct-wrapper)
+  :init
+  (setq flyspell-correct-interface #'flyspell-correct-ivy))
+
 ;; org-gtd mode
 (use-package org-gtd
+  :init
+  (setq org-gtd-update-ack "3.0.0")
   :after org
   :demand t
   :custom
-  (org-gtd-mode t)
+  (org-edna-use-inheritance t)
+  (org-gtd-organize-hooks '(org-gtd-set-area-of-focus
+                            org-set-tags-command))
+  ;; The org-gtd-clarify-mode-hook apparently cannot be themed by
+  ;; use-package.  As a workaround I set it up via customize.
+  ;; (org-gtd-clarify-mode-hook '(set-fill-column-org-gt
+  ;;                              display-fill-column-indicator-mode
+  ;;                              auto-fill-mode))
+  (org-log-buffer-setup-hook '(set-fill-column-org-note
+                               display-fill-column-indicator-mode
+                               auto-fill-mode))
+  :config
+  (org-edna-mode)
   :bind
   (("C-c d c" . org-gtd-capture)
    ("C-c d e" . org-gtd-engage)
    ("C-c d p" . org-gtd-process-inbox)
-   ("C-c d n" . org-gtd-show-all-next)
-   ("C-c d s" . org-gtd-show-stuck-projects)
-   :map org-gtd-process-map
-   ("C-c c" . org-gtd-choose)))
-
-;; Flycheck-grammarly
-(use-package flycheck-grammarly
-  :after flycheck
-  :config (flycheck-grammarly-setup))
+   :map org-gtd-clarify-map
+   ("C-c c" . org-gtd-organize)))
 
 ;; ElPy mode
 (use-package elpy

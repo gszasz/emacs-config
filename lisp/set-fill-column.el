@@ -1,10 +1,10 @@
 ;;; set-fill-column.el --- functions to quick set ‘fill-column’ value
 
-;; Copyright (C) 2022  Gabriel Szász
+;; Copyright (C) 2022-2023  Gabriel Szász
 ;; SPDX-License-Identifier: GPL-3.0-or-later
 
 ;; Author: Gabriel Szász
-;; Version: 2.0
+;; Version: 2.1
 
 ;; This file is not part of GNU Emacs.
 
@@ -31,11 +31,19 @@
   (set-fill-column 70))
 
 (defun set-fill-column-pep8 ()
-  "Set ‘fill-column’ to a value following PEP 8 standard."
+  "Set ‘fill-column’ to follow PEP 8 standard."
   (set-fill-column 79))
 
 (defun set-fill-column-git-commit ()
-  "Set ‘fill-column’ to a value following PEP 8 standard."
+  "Set ‘fill-column’ to follow the git commit message convention."
   (set-fill-column 72))
+
+(defun set-fill-column-org-gtd ()
+  "Set 'fill-column' to match org-gtd tag indentation."
+  (set-fill-column 77))
+
+(defun set-fill-column-org-note ()
+  "Set 'fill-column' to match org-gtd note indentation."
+  (set-fill-column 75))
 
 (provide 'set-fill-column)
