@@ -8,40 +8,23 @@ The configuration is valid for GNU Emacs 28.1 installed from RPMs.
 
 * emacs
 * emacs-ansible
-* emacs-async
 * emacs-auctex
-* emacs-auto-complete
-* emacs-ctable
 * emacs-cython-mode
-* emacs-dash
-* emacs-deferred
 * emacs-dockerfile-mode
-* emacs-epc
-* emacs-epl
-* emacs-flycheck
 * emacs-gettext
 * emacs-goodies
 * emacs-jedi
 * emacs-json-mode
-* emacs-json-reformat
-* emacs-json-snatcher
 * emacs-magit
-* emacs-pkg-info
-* emacs-popup
-* emacs-python-environment
 * emacs-rpm-spec-mode
-* emacs-with-editor
 * emacs-yaml-mode
 
-In Fedora 36, you can install all RPMs above by following command:
+In Fedora 38, you can install all RPMs above by following command:
 
 ```shell
-sudo dnf -y install emacs emacs-ansible emacs-async emacs-auctex \
-  emacs-auto-complete emacs-ctable emacs-cython-mode emacs-dash emacs-deferred \
-  emacs-dockerfile-mode emacs-epc emacs-epl emacs-flycheck emacs-gettext \
-  emacs-goodies emacs-jedi emacs-json-mode emacs-json-reformat \
-  emacs-json-snatcher emacs-magit emacs-pkg-info emacs-popup \
-  emacs-python-environment emacs-rpm-spec-mode emacs-with-editor emacs-yaml-mode
+sudo dnf -y install emacs emacs-ansible emacs-auctex emacs-cython-mode \
+  emacs-dockerfile-mode emacs-gettext emacs-goodies emacs-jedi emacs-json-mode \
+  emacs-magit emacs-rpm-spec-mode emacs-yaml-mode
 ```
 
 ### Configuration files
