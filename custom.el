@@ -15,6 +15,8 @@
  '(csv-header-lines 1)
  '(custom-enabled-themes '(adwaita))
  '(custom-file "~/.emacs.d/custom.el")
+ '(custom-safe-themes
+   '("e3c41651565cb624f772d25fbf12752b31610800041968d96c9aef5a3e8ead8e" default))
  '(cython-default-compile-format "python setup.py build_ext --inplace")
  '(dired-mode-hook '(hl-line-mode))
  '(ein:output-area-inlined-images t)
