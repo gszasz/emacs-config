@@ -102,11 +102,9 @@
   (org-edna-use-inheritance t)
   (org-gtd-organize-hooks '(org-gtd-set-area-of-focus
                             org-set-tags-command))
-  ;; The org-gtd-clarify-mode-hook apparently cannot be themed by
-  ;; use-package.  As a workaround I set it up via customize.
-  ;; (org-gtd-clarify-mode-hook '(set-fill-column-org-gt
-  ;;                              display-fill-column-indicator-mode
-  ;;                              auto-fill-mode))
+  (org-gtd-clarify-mode-hook '(set-fill-column-org-gtd
+                               display-fill-column-indicator-mode
+                               auto-fill-mode))
   (org-log-buffer-setup-hook '(set-fill-column-org-note
                                display-fill-column-indicator-mode
                                auto-fill-mode))
