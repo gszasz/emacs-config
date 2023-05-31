@@ -39,7 +39,7 @@
    '(("gnu" . "https://elpa.gnu.org/packages/")
      ("melpa" . "https://melpa.org/packages/")))
  '(package-selected-packages
-   '(org-gtd ada-mode adaptive-wrap apache-mode csv-mode ein elpy flyspell-correct-ivy gnuplot ivy-bibtex magit-section markdown-mode olivetti org-remark php-mode pygn-mode stripes syslog-mode use-package visual-fill-column whitespace-cleanup-mode yascroll))
+   '(ada-mode adaptive-wrap apache-mode csv-mode ein elpy flyspell-correct-ivy gnuplot ivy-bibtex magit-section markdown-mode olivetti org-gtd org-remark php-mode pygn-mode stripes syslog-mode use-package visual-fill-column whitespace-cleanup-mode yascroll))
  '(safe-local-variable-values '((bibtex-dialect . biblatex)))
  '(scroll-bar-mode nil)
  '(show-paren-mode t)

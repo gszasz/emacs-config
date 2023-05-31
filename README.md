@@ -40,6 +40,7 @@ rm ~/.emacs
 
 ### MELPA packages
 
+* ada-mode
 * adaptive-wrap
 * apache-mode
 * csv-mode
