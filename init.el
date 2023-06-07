@@ -108,9 +108,6 @@
   (org-edna-use-inheritance t)
   (org-gtd-organize-hooks '(org-gtd-set-area-of-focus
                             org-set-tags-command))
-  (org-gtd-clarify-mode-hook '(set-fill-column-org-gtd
-                               display-fill-column-indicator-mode
-                               auto-fill-mode))
   (org-log-buffer-setup-hook '(set-fill-column-org-note
                                display-fill-column-indicator-mode
                                auto-fill-mode))
