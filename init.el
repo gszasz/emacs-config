@@ -92,6 +92,11 @@
   :init
   (setq flyspell-correct-interface #'flyspell-correct-ivy))
 
+;; ob-async
+(use-package ob-async
+  :after org
+  :demand t)
+
 ;; org-gtd mode
 (use-package org-gtd
   :init
