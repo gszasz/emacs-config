@@ -38,6 +38,9 @@ uci-mode-history.txt
 # bookmarks
 /bookmarks
 
+# projectile bookmarks
+/projectile-bookmarks.eld
+
 # backup files
 *~
 \#*#
