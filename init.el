@@ -82,6 +82,10 @@
 
 ;; Load and configure MELPA packages
 
+;; vterm
+(use-package vterm
+  :ensure t)
+
 ;; projectile
 (use-package projectile
   :ensure t
