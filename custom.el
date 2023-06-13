@@ -35,6 +35,7 @@
  '(ivy-mode t)
  '(mouse-autoselect-window t)
  '(org-babel-load-languages '((emacs-lisp . t) (shell . t)))
+ '(org-tags-column -80)
  '(package-archives
    '(("gnu" . "https://elpa.gnu.org/packages/")
      ("melpa" . "https://melpa.org/packages/")))
