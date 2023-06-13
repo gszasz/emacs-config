@@ -43,6 +43,7 @@ rm ~/.emacs
 * ada-mode
 * adaptive-wrap
 * apache-mode
+* counsel-projectile
 * csv-mode
 * ein
 * elpy
@@ -51,15 +52,19 @@ rm ~/.emacs
 * ivy-bibtex
 * magit-section
 * markdown-mode
+* ob-async
 * olivetti
 * org-gtd
 * org-remark
 * php-mode
+* pkg-info
+* projectile
 * pygn-mode
 * stripes
 * syslog-mode
 * use-package
 * visual-fill-column
+* vterm
 * whitespace-cleanup-mode
 * yascroll
 
