@@ -38,12 +38,8 @@
   "Set ‘fill-column’ to follow the git commit message convention."
   (set-fill-column 72))
 
-(defun set-fill-column-org-gtd ()
-  "Set 'fill-column' to match org-gtd tag indentation."
-  (set-fill-column 77))
-
 (defun set-fill-column-org-note ()
   "Set 'fill-column' to match org-gtd note indentation."
-  (set-fill-column 75))
+  (set-fill-column 78))
 
 (provide 'set-fill-column)
