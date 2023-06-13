@@ -3,12 +3,11 @@ auto-save-list/
 
 # Cache
 .cache/
+eln-cache/
+/projectile.cache
 
 # MELPA packages
 elpa/
-
-# eln cache
-eln-cache/
 
 # ElPy virtual env
 elpy/
@@ -19,14 +18,11 @@ request/
 # transient files
 transient/
 
-# eshell history
+# history files
 eshell/history
-
-# tramp connection history
 tramp
-
-# uci-mode history
-uci-mode-history.txt
+/uci-mode-history.txt
+/recentf
 
 # org-mode locations
 /.org-id-locations
@@ -37,8 +33,6 @@ uci-mode-history.txt
 
 # bookmarks
 /bookmarks
-
-# projectile bookmarks
 /projectile-bookmarks.eld
 
 # backup files
