@@ -32,8 +32,34 @@
 
 ;; Global key bindings
 
-;; Set C-x k to kill current buffer
-(global-set-key (kbd "C-x k") 'kill-this-buffer)
+;; Set s-k to instantly kill current buffer
+(global-set-key (kbd "s-k") 'kill-this-buffer)
+
+;; Add Czech/Slovak letters and Euro sign to C-x 8 map
+(dolist (binding '(("vC" . [?Č])
+                   ("vc" . [?č])
+                   ("vD" . [?Ď])
+                   ("vd" . [?ď])
+                   ("vE" . [?Ě])
+                   ("ve" . [?ě])
+                   ("vL" . [?Ľ])
+                   ("vl" . [?ľ])
+                   ("vN" . [?Ň])
+                   ("vn" . [?ň])
+                   ("vR" . [?Ř])
+                   ("vr" . [?ř])
+                   ("vS" . [?Š])
+                   ("vs" . [?š])
+                   ("vT" . [?Ť])
+                   ("vt" . [?ť])
+                   ("vZ" . [?Ž])
+                   ("vz" . [?ž])
+                   ("o" . nil) ; First unbind "o" from the map
+                   ("oU" . [?Ů])
+                   ("ou" . [?ů])
+                   ("E" . [?€])
+                   ))
+  (define-key iso-transl-ctl-x-8-map (kbd (car binding)) (cdr binding)))
 
 ;; Load my functions
 (add-to-list 'load-path "~/.emacs.d/lisp/")
