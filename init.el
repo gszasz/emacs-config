@@ -185,9 +185,10 @@
 ;; CSV mode
 (use-package csv-mode
   :ensure t
-  :custom (csv-header-lines 1)
-  :hook ((csv-mode . hl-line-mode)
-         (csv-mode . stripes-mode)))
+  :custom
+  (csv-header-lines 1)
+  (stripes-unit 1)
+  :hook (csv-mode . stripes-mode))
 
 ;; Markdown mode
 (use-package markdown-mode
