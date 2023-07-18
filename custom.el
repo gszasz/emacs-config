@@ -13,6 +13,7 @@
  '(column-number-mode t)
  '(copyright-year-ranges t)
  '(csv-header-lines 1)
+ '(csv-separators '("," "	" ";"))
  '(custom-enabled-themes '(adwaita))
  '(custom-file "~/.emacs.d/custom.el")
  '(custom-safe-themes
