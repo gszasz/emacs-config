@@ -110,7 +110,10 @@
 
 ;; vterm
 (use-package vterm
-  :ensure t)
+  :ensure t
+  :custom
+  (vterm-tramp-shells '(("ssh" "/bin/bash")
+                        ("docker" "/bin/sh"))))
 
 ;; projectile
 (use-package projectile

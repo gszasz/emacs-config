@@ -12,6 +12,9 @@ elpa/
 # ElPy virtual env
 elpy/
 
+# speed-type files
+speed-type/
+
 # requests
 request/
 
