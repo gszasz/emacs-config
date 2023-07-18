@@ -45,7 +45,6 @@ rm ~/.emacs
 * apache-mode
 * counsel-projectile
 * csv-mode
-* ein
 * elpy
 * flyspell-correct-ivy
 * gnuplot
@@ -60,6 +59,7 @@ rm ~/.emacs
 * pkg-info
 * projectile
 * pygn-mode
+* speed-type
 * stripes
 * syslog-mode
 * use-package
