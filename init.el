@@ -1,33 +1,32 @@
-;;; init.el --- My Emacs configuration
+;;; init.el --- My Emacs configuration  -*- lexical-binding: t; -*-
+
 ;; Copyright (C) 2016-2017, 2022-2023  Gabriel Szász
 ;; SPDX-License-Identifier: GPL-3.0-or-later
-;;
+
 ;; Author: Gabriel Szász <gabriel.szasz1@gmail.com>
-;; Homepage: https://github.com/gszasz/emacs-config
-;;
+;; URL: https://github.com/gszasz/emacs-config
+
 ;; This file is not part of GNU Emacs.
-;;
+
 ;; This program is free software: you can redistribute it and/or
 ;; modify it under the terms of the GNU General Public License as
 ;; published by the Free Software Foundation, either version 3 of the
 ;; License, or (at your option) any later version.
-;;
+
 ;; This program is distributed in the hope that it will be useful, but
 ;; WITHOUT ANY WARRANTY; without even the implied warranty of
 ;; MERCHANTABILITY or FITNESS FOR A PARTICULAR PURPOSE.  See the GNU
 ;; General Public License for more details.
-;;
+
 ;; You should have received a copy of the GNU General Public License
 ;; along with this program.  If not, see
 ;; <https://www.gnu.org/licenses/>.
-;;
-;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;
-;;
+
 ;;; Commentary:
-;;
+
 ;; I combine RPM packages with MELPA while preferring Customize for
 ;; config whenever possible.
-;;
+
 ;;; Code:
 
 ;; Global key bindings
@@ -239,3 +238,7 @@
 (load "~/.emacs.d/custom.el")
 
 ;;; init.el ends here
+
+;; Local Variables:
+;; no-byte-compile: t
+;; End:
