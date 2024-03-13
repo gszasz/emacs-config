@@ -143,6 +143,8 @@
 
 ;; ob-async
 (use-package ob-async
+  :init
+  (setq ob-async-no-async-languages-alist '("ipython"))
   :after org
   :demand t)
 
