@@ -22,6 +22,7 @@
  '(cython-default-compile-format "python setup.py build_ext --inplace")
  '(delete-selection-mode t)
  '(dired-mode-hook '(hl-line-mode))
+ '(doc-view-scale-internally nil)
  '(emacs-lisp-mode-hook
    '(eldoc-mode flyspell-prog-mode whitespace-cleanup-mode set-fill-column-lisp))
  '(fill-column 80)
