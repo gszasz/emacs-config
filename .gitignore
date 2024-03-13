@@ -22,7 +22,7 @@ request/
 transient/
 
 # history files
-eshell/history
+eshell/
 tramp
 /uci-mode-history.txt
 /recentf
@@ -45,3 +45,6 @@ tramp
 
 # compiled files
 *.elc
+
+# autocompile files
+ac-comphist.dat
