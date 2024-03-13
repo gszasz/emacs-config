@@ -46,6 +46,8 @@
      ("melpa" . "https://melpa.org/packages/")))
  '(package-selected-packages
    '(hledger-mode flymake-hledger ob-async org-gtd elpy cython-mode ada-mode adaptive-wrap apache-mode counsel-projectile csv-mode flyspell-correct-ivy gnuplot ivy-bibtex markdown-mode olivetti php-mode pkg-info projectile pygn-mode speed-type stripes syslog-mode visual-fill-column whitespace-cleanup-mode yascroll))
+ '(python-fill-docstring-style 'pep-257-nn)
+ '(python-skeleton-autoinsert t)
  '(recentf-mode t)
  '(safe-local-variable-values '((bibtex-dialect . biblatex)))
  '(scroll-bar-mode nil)
