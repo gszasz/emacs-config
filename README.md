@@ -92,7 +92,9 @@ systemctl --user restart emacs
 
 ## License
 
-This file is not part of GNU Emacs.
+When a range of years is used in a copyright notice, the copyright applies to
+every year in the range, inclusive, as if the years would be listed
+individually.
 
 This program is free software: you can redistribute it and/or modify it under
 the terms of the GNU General Public License as published by the Free Software
