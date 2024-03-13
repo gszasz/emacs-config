@@ -7,7 +7,7 @@
  '(TeX-save-query nil)
  '(TeX-source-correlate-mode t)
  '(alert-default-style 'libnotify)
- '(before-save-hook '(copyright-update))
+ '(before-save-hook '(copyright-update time-stamp))
  '(blink-cursor-mode t)
  '(calendar-week-start-day 1)
  '(column-number-mode t)
