@@ -14,7 +14,7 @@
  '(copyright-names-regexp "\\(Gabriel Sz[aá]sz\\|DTPA\\)")
  '(copyright-year-ranges t)
  '(csv-header-lines 1)
- '(csv-separators '("," "	" ";"))
+ '(csv-separators '("," "\11" ";"))
  '(custom-enabled-themes '(adwaita))
  '(custom-file "~/.emacs.d/custom.el")
  '(custom-safe-themes
