@@ -90,6 +90,15 @@
 ;; Bookmark Menu mode
 (add-hook 'bookmark-bmenu-mode-hook #'hl-line-mode)
 
+;; Shell Script mode
+(add-to-list 'auto-mode-alist '("\\.bashrc\\'" . shell-script-mode))
+
+;; Desktop Entry mode
+(add-hook 'desktop-entry-mode-hook #'font-lock-fontify-buffer)
+
+;; Conf mode
+(add-to-list 'auto-mode-alist '("\\.repo\\'" . conf-unix-mode))
+
 ;; AUCTeX mode
 (add-hook 'LaTeX-mode-hook #'flyspell-mode)
 (add-hook 'LaTeX-mode-hook #'visual-line-mode)
