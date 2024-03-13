@@ -107,13 +107,6 @@
 
 ;; Load and configure MELPA packages
 
-;; vterm
-(use-package vterm
-  :ensure t
-  :custom
-  (vterm-tramp-shells '(("ssh" "/bin/bash")
-                        ("docker" "/bin/sh"))))
-
 ;; projectile
 (use-package projectile
   :ensure t
