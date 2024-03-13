@@ -33,4 +33,8 @@
   "Hook function to setup line highlighting for org tables."
   (add-hook 'post-command-hook #'highlight-current-table-line nil t))
 
+(defun set-date-header-arg-as-time-stamp ()
+  "Hook function to set DATE header argument as time stamp."
+  (setq time-stamp-pattern "^#\\+\\(DATE\\|date\\): %Y-%m-%d$"))
+
 (provide 'org-extras)
