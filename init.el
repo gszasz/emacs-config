@@ -254,7 +254,8 @@
               ("M-b" . pygn-mode-previous-move-follow-board)
               ("C-c SPC". pygn-mode-display-gui-board-at-pos)
               ("C-h $" . pygn-mode-describe-annotation-at-pos))
-  :hook (pygn-mode . visual-line-mode)
+  :hook ((pygn-mode . visual-line-mode)
+         (pygn-mode . font-lock-fontify-buffer))
   :custom
   ;; pygn-mode-pythonpath is not automatically updated after pygn-mode
   ;; package update.  To workaround this issue I set the variable
