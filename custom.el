@@ -11,6 +11,7 @@
  '(blink-cursor-mode t)
  '(calendar-week-start-day 1)
  '(column-number-mode t)
+ '(copyright-names-regexp "\\(Gabriel Sz[aá]sz\\|DTPA\\)")
  '(copyright-year-ranges t)
  '(csv-header-lines 1)
  '(csv-separators '("," "	" ";"))
