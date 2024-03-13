@@ -29,6 +29,8 @@
  '(git-commit-summary-max-length 50)
  '(global-whitespace-cleanup-mode t)
  '(global-yascroll-bar-mode t)
+ '(hledger-currency-string "CZK")
+ '(hledger-jfile "~/Documents/Finance/Accounting/all.journal")
  '(indent-tabs-mode nil)
  '(inhibit-startup-screen t)
  '(ispell-dictionary "en_US")
@@ -41,7 +43,7 @@
    '(("gnu" . "https://elpa.gnu.org/packages/")
      ("melpa" . "https://melpa.org/packages/")))
  '(package-selected-packages
-   '(ada-mode adaptive-wrap apache-mode counsel-projectile csv-mode elpy flyspell-correct-ivy gnuplot ivy-bibtex magit-section markdown-mode ob-async olivetti org-gtd org-remark php-mode pkg-info projectile pygn-mode speed-type stripes syslog-mode use-package visual-fill-column vterm whitespace-cleanup-mode yascroll))
+   '(hledger-mode flymake-hledger ob-async org-gtd elpy cython-mode ada-mode adaptive-wrap apache-mode counsel-projectile csv-mode flyspell-correct-ivy gnuplot ivy-bibtex markdown-mode olivetti php-mode pkg-info projectile pygn-mode speed-type stripes syslog-mode visual-fill-column whitespace-cleanup-mode yascroll))
  '(recentf-mode t)
  '(safe-local-variable-values '((bibtex-dialect . biblatex)))
  '(scroll-bar-mode nil)

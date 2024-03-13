@@ -1,6 +1,6 @@
 ;;; init.el --- My Emacs configuration  -*- lexical-binding: t; -*-
 
-;; Copyright (C) 2016-2017, 2022-2023  Gabriel Szász
+;; Copyright (C) 2016-2017, 2022-2024  Gabriel Szász
 ;; SPDX-License-Identifier: GPL-3.0-or-later
 
 ;; Author: Gabriel Szász <gabriel.szasz1@gmail.com>
@@ -166,6 +166,43 @@
    ("C-c d p" . org-gtd-process-inbox)
    :map org-gtd-clarify-map
    ("C-c c" . org-gtd-organize)))
+
+(use-package hledger-mode
+  :preface
+  (defun hledger/next-entry ()
+    "Move to next entry and pulse."
+    (interactive)
+    (hledger-next-or-new-entry)
+    (hledger-pulse-momentary-current-entry))
+
+  (defface hledger-warning-face
+    '((((background dark))
+       :background "Red" :foreground "White")
+      (((background light))
+       :background "Red" :foreground "White")
+      (t :inverse-video t))
+    "Face for warning"
+    :group 'hledger)
+
+  (defun hledger/prev-entry ()
+    "Move to last entry and pulse."
+    (interactive)
+    (hledger-backward-entry)
+    (hledger-pulse-momentary-current-entry))
+
+  :demand t
+  :mode ("\\.journal\\'" "\\.hledger\\'")
+  :bind (("C-c j" . hledger-run-command)
+         :map hledger-mode-map
+         ("C-c e" . hledger-jentry)
+         ("M-p" . hledger/prev-entry)
+         ("M-n" . hledger/next-entry))
+  :hook
+  (hledger-mode . (lambda () (make-local-variable 'company-backends)
+                    (add-to-list 'company-backends 'hledger-company)))
+  :custom
+   (hledger-currency-string "CZK")
+   (hledger-jfile "~/Documents/Finance/Accounting/2024.journal"))
 
 ;; ElPy mode
 (use-package elpy
