@@ -57,6 +57,7 @@
  '(tramp-allow-unsafe-temporary-files t)
  '(tramp-use-ssh-controlmaster-options nil)
  '(warning-suppress-log-types '((comp)))
+ '(winner-mode t)
  '(yaml-mode-hook
    '(yaml-set-imenu-generic-expression flyspell-prog-mode whitespace-cleanup-mode smart-ansible-mode)))
 (custom-set-faces
