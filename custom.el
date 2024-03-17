@@ -41,6 +41,7 @@
  '(ivy-mode t)
  '(mouse-autoselect-window t)
  '(org-babel-load-languages '((emacs-lisp . t) (shell . t)))
+ '(org-export-backends '(ascii html icalendar latex md odt))
  '(org-startup-folded nil)
  '(org-tags-column -80)
  '(package-archives
