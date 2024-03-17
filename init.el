@@ -76,9 +76,9 @@
 
 ;; List of installed Emacs-related RPM packages:
 ;;
-;; emacs emacs-ansible emacs-auctex emacs-cython-mode
-;; emacs-dockerfile-mode emacs-gettext emacs-goodies emacs-jedi
-;; emacs-json-mode emacs-magit emacs-rpm-spec-mode emacs-yaml-mode
+;; emacs emacs-ansible emacs-auctex emacs-dockerfile-mode
+;; emacs-gettext emacs-goodies emacs-jedi emacs-json-mode emacs-magit
+;; emacs-rpm-spec-mode emacs-yaml-mode
 
 ;; Load packages installed via RPM
 (require 'ansible)
