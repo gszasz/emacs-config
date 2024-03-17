@@ -108,7 +108,6 @@
 
 ;; Org mode
 (add-hook 'org-mode-hook #'flyspell-mode)
-(add-hook 'org-mode-hook #'org-remark-mode)
 (add-hook 'org-mode-hook #'auto-fill-mode)
 (add-hook 'org-mode-hook #'display-fill-column-indicator-mode)
 (add-hook 'org-mode-hook #'set-date-header-arg-as-time-stamp)
