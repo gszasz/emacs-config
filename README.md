@@ -9,7 +9,6 @@ The configuration is valid for GNU Emacs 28.1 installed from RPMs.
 * emacs
 * emacs-ansible
 * emacs-auctex
-* emacs-cython-mode
 * emacs-dockerfile-mode
 * emacs-gettext
 * emacs-goodies
@@ -19,12 +18,12 @@ The configuration is valid for GNU Emacs 28.1 installed from RPMs.
 * emacs-rpm-spec-mode
 * emacs-yaml-mode
 
-In Fedora 38, you can install all RPMs above by following command:
+In Fedora 39, you can install all RPMs above by following command:
 
 ```shell
-sudo dnf -y install emacs emacs-ansible emacs-auctex emacs-cython-mode \
-  emacs-dockerfile-mode emacs-gettext emacs-goodies emacs-jedi emacs-json-mode \
-  emacs-magit emacs-rpm-spec-mode emacs-yaml-mode
+sudo dnf -y install emacs emacs-ansible emacs-auctex emacs-dockerfile-mode \
+  emacs-gettext emacs-goodies emacs-jedi emacs-json-mode emacs-magit \
+  emacs-rpm-spec-mode emacs-yaml-mode
 ```
 
 ### Configuration files
@@ -45,26 +44,24 @@ rm ~/.emacs
 * apache-mode
 * counsel-projectile
 * csv-mode
+* cython-mode
 * elpy
+* flymake-hledger
 * flyspell-correct-ivy
+* git-modes
 * gnuplot
+* hledger-mode
 * ivy-bibtex
-* magit-section
 * markdown-mode
 * ob-async
-* olivetti
 * org-gtd
-* org-remark
 * php-mode
 * pkg-info
 * projectile
 * pygn-mode
-* speed-type
 * stripes
 * syslog-mode
-* use-package
 * visual-fill-column
-* vterm
 * whitespace-cleanup-mode
 * yascroll
 
