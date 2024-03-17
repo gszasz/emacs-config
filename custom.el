@@ -36,6 +36,7 @@
  '(hledger-jfile "~/Documents/Finance/Accounting/2024.journal")
  '(indent-tabs-mode nil)
  '(inhibit-startup-screen t)
+ '(initial-frame-alist '((vertical-scroll-bars)))
  '(ispell-dictionary "en_US")
  '(ivy-mode t)
  '(mouse-autoselect-window t)
