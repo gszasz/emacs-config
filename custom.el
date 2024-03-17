@@ -33,7 +33,7 @@
  '(global-whitespace-cleanup-mode t)
  '(global-yascroll-bar-mode t)
  '(hledger-currency-string "CZK")
- '(hledger-jfile "~/Documents/Finance/Accounting/all.journal")
+ '(hledger-jfile "~/Documents/Finance/Accounting/2024.journal")
  '(indent-tabs-mode nil)
  '(inhibit-startup-screen t)
  '(ispell-dictionary "en_US")
