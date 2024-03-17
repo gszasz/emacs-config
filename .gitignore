@@ -5,6 +5,7 @@ auto-save-list/
 .cache/
 eln-cache/
 /projectile.cache
+/image-dired/
 
 # MELPA packages
 elpa/
