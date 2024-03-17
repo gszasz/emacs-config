@@ -60,6 +60,12 @@
                    ))
   (define-key iso-transl-ctl-x-8-map (kbd (car binding)) (cdr binding)))
 
+;; Emacs frames no longer follow X.Org defaults in Wayland.  I
+;; workaround this issue by explicitly setting the frame size to 80x35
+;; after new frame creation.
+(add-hook 'after-make-frame-functions
+          (lambda (frame) (set-frame-size frame 80 35)))
+
 ;; Load my functions
 (add-to-list 'load-path "~/.emacs.d/lisp/")
 (require 'org-extras)
