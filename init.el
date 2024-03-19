@@ -177,12 +177,43 @@
    :map org-gtd-clarify-map
    ("C-c c" . org-gtd-organize)))
 
+;; hledger-mode
 (use-package hledger-mode
+  :ensure t
+  :mode ("\\.journal\\'" "\\.hledger\\'")
+  :bind (("C-c j" . hledger-run-command)
+         :map hledger-mode-map
+         ("C-c e" . hledger-jentry)
+         ("C-c i" . hledger/indent-to-amount-column)
+         ("M-p" . hledger/prev-entry)
+         ("M-n" . hledger/next-entry))
+  :hook ((hledger-mode . hledger/set-company-backend)
+         (hledger-mode . company-mode)
+         (hledger-mode . flycheck-mode))
+  :custom
+  (hledger-currency-string "CZK")
+  (hledger-jfile "~/Documents/Finance/Accounting/2024.journal")
+  (hledger-year-of-birth 1982)
   :preface
+  (defun hledger/set-company-backend ()
+    (setq-local company-backends '((hledger-company))))
+
+  (defun hledger/indent-to-amount-column ()
+    "Indent to the column with aligned amounts (now set to 31)."
+    (interactive)
+    (delete-horizontal-space)
+    (indent-to-column 31))
+
   (defun hledger/next-entry ()
     "Move to next entry and pulse."
     (interactive)
     (hledger-next-or-new-entry)
+    (hledger-pulse-momentary-current-entry))
+
+  (defun hledger/prev-entry ()
+    "Move to last entry and pulse."
+    (interactive)
+    (hledger-backward-entry)
     (hledger-pulse-momentary-current-entry))
 
   (defface hledger-warning-face
@@ -192,28 +223,12 @@
        :background "Red" :foreground "White")
       (t :inverse-video t))
     "Face for warning"
-    :group 'hledger)
+    :group 'hledger))
 
-  (defun hledger/prev-entry ()
-    "Move to last entry and pulse."
-    (interactive)
-    (hledger-backward-entry)
-    (hledger-pulse-momentary-current-entry))
-
-  :demand t
-  :mode ("\\.journal\\'" "\\.hledger\\'")
-  :bind (("C-c j" . hledger-run-command)
-         :map hledger-mode-map
-         ("C-c e" . hledger-jentry)
-         ("M-p" . hledger/prev-entry)
-         ("M-n" . hledger/next-entry))
-  :hook
-  (hledger-mode . (lambda () (make-local-variable 'company-backends)
-                    (add-to-list 'company-backends 'hledger-company)))
-  :custom
-   (hledger-currency-string "CZK")
-   (hledger-jfile "~/Documents/Finance/Accounting/2024.journal")
-   (hledger-year-of-birth 1982))
+;; flycheck-hledger
+(use-package flycheck-hledger
+  :after (flycheck hledger-mode)
+  :demand t)
 
 ;; ElPy mode
 (use-package elpy
