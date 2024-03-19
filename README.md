@@ -46,7 +46,7 @@ rm ~/.emacs
 * csv-mode
 * cython-mode
 * elpy
-* flymake-hledger
+* flycheck-hledger
 * flyspell-correct-ivy
 * git-modes
 * gnuplot
