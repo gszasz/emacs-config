@@ -212,7 +212,8 @@
                     (add-to-list 'company-backends 'hledger-company)))
   :custom
    (hledger-currency-string "CZK")
-   (hledger-jfile "~/Documents/Finance/Accounting/2024.journal"))
+   (hledger-jfile "~/Documents/Finance/Accounting/2024.journal")
+   (hledger-year-of-birth 1982))
 
 ;; ElPy mode
 (use-package elpy

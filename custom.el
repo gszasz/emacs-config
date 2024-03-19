@@ -34,6 +34,7 @@
  '(global-yascroll-bar-mode t)
  '(hledger-currency-string "CZK")
  '(hledger-jfile "~/Documents/Finance/Accounting/2024.journal")
+ '(hledger-year-of-birth 1982)
  '(indent-tabs-mode nil)
  '(inhibit-startup-screen t)
  '(initial-frame-alist '((vertical-scroll-bars)))
