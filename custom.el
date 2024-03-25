@@ -35,6 +35,7 @@
  '(hledger-currency-string "CZK")
  '(hledger-jfile "~/Documents/Finance/Accounting/2024.journal")
  '(hledger-year-of-birth 1982)
+ '(image-auto-resize 'fit-window)
  '(indent-tabs-mode nil)
  '(inhibit-startup-screen t)
  '(initial-frame-alist '((vertical-scroll-bars)))
