@@ -52,6 +52,7 @@ rm ~/.emacs
 * gnuplot
 * hledger-mode
 * ivy-bibtex
+* magit-section
 * markdown-mode
 * ob-async
 * org-gtd
