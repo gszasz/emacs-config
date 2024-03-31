@@ -66,6 +66,12 @@
 (add-hook 'after-make-frame-functions
           (lambda (frame) (set-frame-size frame 80 35)))
 
+;; Emacs 29.2 does not define the untrusted-content buffer local
+;; variable (introduced in Emacs 29.3, not yet part of Fedora 39);
+;; however, some MELPA packages already expect it to be defined.  This
+;; setting workarounds the issue.
+(make-variable-buffer-local 'untrusted-content)
+
 ;; Load my functions
 (add-to-list 'load-path "~/.emacs.d/lisp/")
 (require 'org-extras)
