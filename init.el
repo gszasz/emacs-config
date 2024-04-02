@@ -184,6 +184,10 @@
    :map org-gtd-clarify-map
    ("C-c c" . org-gtd-organize)))
 
+;; gnuplot
+(use-package gnuplot
+  :mode ("\\.plt\\'" . gnuplot-mode))
+
 ;; hledger-mode
 (use-package hledger-mode
   :ensure t
