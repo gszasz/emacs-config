@@ -1,5 +1,5 @@
-Copyright (C) 2016-2017, 2022-2024 Gabriel Szász
-see the end of the file for license conditions.
+_Copyright © 2016-2017, 2022-2024 Gabriel Szász; see the end of the file for
+license conditions._
 
 # My personal Emacs config
 
