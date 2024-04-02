@@ -3,7 +3,7 @@ see the end of the file for license conditions.
 
 # My personal Emacs config
 
-The configuration is valid for GNU Emacs 28.1 installed from RPMs.
+The configuration is valid for GNU Emacs 29.3 installed from RPMs.
 
 ## Installation
 
