@@ -54,7 +54,23 @@
  '(python-fill-docstring-style 'pep-257-nn)
  '(python-skeleton-autoinsert t)
  '(recentf-mode t)
- '(safe-local-variable-values '((bibtex-dialect . biblatex)))
+ '(safe-local-variable-values
+   '((outline-minor-mode-highlight . t)
+     (outline-minor-mode-cycle . t)
+     (eval let
+           ((inhibit-read-only t)
+            (compilation-filter-start
+             (point-min)))
+           (save-excursion
+             (goto-char
+              (point-max))
+             (grep-filter)
+             (set-buffer-modified-p nil)))
+     (etags-regen-ignores "test/manual/etags/")
+     (etags-regen-regexp-alist
+      (("c" "objc")
+       "/[ \11]*DEFVAR_[A-Z_ \11(]+\"\\([^\"]+\\)\"/\\1/" "/[ \11]*DEFVAR_[A-Z_ \11(]+\"[^\"]+\",[ \11]\\([A-Za-z0-9_]+\\)/\\1/"))
+     (bibtex-dialect . biblatex)))
  '(scroll-bar-mode nil)
  '(show-paren-mode t)
  '(tool-bar-mode nil)

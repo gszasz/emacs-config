@@ -1,10 +1,11 @@
 ;;; org-extras.el --- functions to extend org mode
 
-;; Copyright (C) 2023-2024  Gabriel Szász
-;; SPDX-License-Identifier: GPL-3.0-or-later
+;; Copyright (C) 2023-2024 Gabriel Szász
 
 ;; Author: Gabriel Szász
 ;; Version: 1.1
+
+;; SPDX-License-Identifier: GPL-3.0-or-later
 
 ;; This file is not part of GNU Emacs.
 

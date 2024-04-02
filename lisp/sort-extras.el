@@ -1,13 +1,14 @@
 ;;; sort-extras.el --- set of functions for sorting
 
-;; Copyright (C) 2023  Gabriel Szász
-;; SPDX-License-Identifier: GPL-3.0-or-later
+;; Copyright (C) 2023 Gabriel Szász
 ;; Based on code at Emacs Wiki:
 ;; <https://www.emacswiki.org/emacs/SortWords>
-;;   Copyright (C) 2019  Noam Postavsky
+;;   Copyright (C) 2019 Noam Postavsky
 
 ;; Author: Gabriel Szász
 ;; Version: 1.0
+
+;; SPDX-License-Identifier: GPL-3.0-or-later
 
 ;; This file is not part of GNU Emacs.
 

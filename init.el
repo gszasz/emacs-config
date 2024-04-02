@@ -1,10 +1,11 @@
 ;;; init.el --- My Emacs configuration  -*- lexical-binding: t; -*-
 
-;; Copyright (C) 2016-2017, 2022-2024  Gabriel Szász
-;; SPDX-License-Identifier: GPL-3.0-or-later
+;; Copyright (C) 2016-2017, 2022-2024 Gabriel Szász
 
-;; Author: Gabriel Szász <gabriel.szasz1@gmail.com>
+;; Author: Gabriel Szász
 ;; URL: https://github.com/gszasz/emacs-config
+
+;; SPDX-License-Identifier: GPL-3.0-or-later
 
 ;; This file is not part of GNU Emacs.
 

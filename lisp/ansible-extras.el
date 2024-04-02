@@ -1,10 +1,11 @@
 ;;; ansible-extras.el --- functions to extend ‘ansible.el’
 
-;; Copyright (C) 2022  Gabriel Szász
-;; SPDX-License-Identifier: GPL-3.0-or-later
+;; Copyright (C) 2022 Gabriel Szász
 
 ;; Author: Gabriel Szász
 ;; Version: 1.0
+
+;; SPDX-License-Identifier: GPL-3.0-or-later
 
 ;; This file is not part of GNU Emacs.
 

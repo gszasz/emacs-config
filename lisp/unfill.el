@@ -1,14 +1,15 @@
 ;;; unfill.el --- set of functions for unfilling paragraphs
 
-;; Copyright (C) 2016-2017, 2022  Gabriel Szász
-;; SPDX-License-Identifier: GPL-3.0-or-later
+;; Copyright (C) 2016-2017, 2022 Gabriel Szász
 ;; Based on code at Emacs Wiki:
 ;; <https://www.emacswiki.org/emacs/UnfillParagraph>
-;;   Copyright (C) 2018  Tom Baker
+;;   Copyright (C) 2018 Tom Baker
 ;;   Original Author: Stefan Monnier
 
 ;; Author: Gabriel Szász 
 ;; Version: 2.0
+
+;; SPDX-License-Identifier: GPL-3.0-or-later
 
 ;; This file is not part of GNU Emacs.
 

@@ -1,3 +1,6 @@
+Copyright (C) 2016-2017, 2022-2024 Gabriel Szász
+see the end of the file for license conditions.
+
 # My personal Emacs config
 
 The configuration is valid for GNU Emacs 28.1 installed from RPMs.
@@ -69,7 +72,6 @@ rm ~/.emacs
 You can launch Emacs now and run to install all required MELPA packages
 `M-x package-install-selected-packages<RET>`
 
-
 ### Emacs daemon
 
 The only convenient use of Emacs is to use its built-in client-server
@@ -88,7 +90,14 @@ convince yourself that you did not break anything.
 systemctl --user restart emacs
 ```
 
-## License
+# Note on copyright years
+
+In copyright notices where the copyright holder is Gabriel Szász, then where a
+range of years appears, this is an inclusive range that applies to every year in
+the range.  For example: 2005-2008 represents the years 2005, 2006, 2007, and
+2008.
+
+# License conditions
 
 This program is free software: you can redistribute it and/or modify it under
 the terms of the GNU General Public License as published by the Free Software
@@ -101,14 +110,3 @@ PARTICULAR PURPOSE.  See the GNU General Public License for more details.
 
 You should have received a copy of the GNU General Public License along with
 this program.  If not, see <https://www.gnu.org/licenses/>.
-
-The use of a range of years within a copyright notice in this distribution
-should be interpreted as being equivalent to a list of years including the first
-and last year specified and all consecutive years between them.
-
-For example, a copyright notice that reads "Copyright (C) 2005, 2007-2009,
-2011-2012" should be interpreted as being identical to a notice that reads
-"Copyright (C) 2005, 2007, 2008, 2009, 2011, 2012" and a copyright notice that
-reads "Copyright (C) 2005-2012" should be interpreted as being identical to a
-notice that reads "Copyright (C) 2005, 2006, 2007, 2008, 2009, 2010, 2011,
-2012".

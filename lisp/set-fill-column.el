@@ -1,10 +1,11 @@
 ;;; set-fill-column.el --- functions to quick set ‘fill-column’ value
 
-;; Copyright (C) 2022-2023  Gabriel Szász
-;; SPDX-License-Identifier: GPL-3.0-or-later
+;; Copyright (C) 2022-2023 Gabriel Szász
 
 ;; Author: Gabriel Szász
 ;; Version: 2.1
+
+;; SPDX-License-Identifier: GPL-3.0-or-later
 
 ;; This file is not part of GNU Emacs.
 
