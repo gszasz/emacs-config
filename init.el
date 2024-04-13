@@ -32,9 +32,6 @@
 
 ;; Global key bindings
 
-;; Set s-k to instantly kill current buffer
-(global-set-key (kbd "s-k") 'kill-this-buffer)
-
 ;; Add Czech/Slovak letters and Euro sign to C-x 8 map
 (dolist (binding '(("vC" . [?Č])
                    ("vc" . [?č])
