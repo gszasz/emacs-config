@@ -31,6 +31,7 @@
 ;;; Code:
 
 ;; Global key bindings
+(global-set-key (kbd "M-o") 'other-window)
 
 ;; Add Czech/Slovak letters and Euro sign to C-x 8 map
 (dolist (binding '(("vC" . [?Č])
