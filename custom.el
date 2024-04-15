@@ -42,7 +42,7 @@
  '(ispell-dictionary "en_US")
  '(ivy-mode t)
  '(mouse-autoselect-window t)
- '(org-babel-load-languages '((emacs-lisp . t) (shell . t)))
+ '(org-babel-load-languages '((emacs-lisp . t) (shell . t) (python . t)))
  '(org-export-backends '(ascii html icalendar latex md odt))
  '(org-startup-folded nil)
  '(org-tags-column -80)
