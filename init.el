@@ -121,18 +121,6 @@
 
 ;; Load and configure MELPA packages
 
-;; projectile
-(use-package projectile
-  :ensure t
-  :init
-  (projectile-mode +1)
-  :custom
-  (counsel-projectile-mode t nil (counsel-projectile))
-  (projectile-project-search-path '("~/src/"))
-  :bind (:map projectile-mode-map
-              ("s-p" . projectile-command-map)
-              ("C-c p" . projectile-command-map)))
-
 ;; whitespace-cleanup-mode
 (use-package whitespace-cleanup-mode
   :ensure t

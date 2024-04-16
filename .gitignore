@@ -4,7 +4,6 @@ auto-save-list/
 # Cache
 .cache/
 eln-cache/
-/projectile.cache
 /image-dired/
 
 # MELPA packages
@@ -37,7 +36,9 @@ tramp
 
 # bookmarks
 /bookmarks
-/projectile-bookmarks.eld
+
+# projects
+/projects
 
 # backup files
 *~
