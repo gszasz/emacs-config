@@ -21,7 +21,7 @@ The configuration is valid for GNU Emacs 29.3 installed from RPMs.
 * emacs-rpm-spec-mode
 * emacs-yaml-mode
 
-In Fedora 39, you can install all RPMs above by following command:
+In Fedora 40, you can install all RPMs above by following command:
 
 ```shell
 sudo dnf -y install emacs emacs-ansible emacs-auctex emacs-dockerfile-mode \
