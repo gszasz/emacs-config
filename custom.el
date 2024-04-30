@@ -50,7 +50,7 @@
    '(("gnu" . "https://elpa.gnu.org/packages/")
      ("melpa" . "https://melpa.org/packages/")))
  '(package-selected-packages
-   '(ada-mode adaptive-wrap apache-mode csv-mode cython-mode elpy flycheck-hledger flyspell-correct-ivy git-modes gnuplot hledger-mode ivy-bibtex magit-section markdown-mode ob-async org-gtd php-mode pkg-info pygn-mode stripes syslog-mode visual-fill-column whitespace-cleanup-mode yascroll))
+   '(ada-mode adaptive-wrap apache-mode csv-mode cython-mode elpy flycheck-hledger flyspell-correct-ivy git-modes gnuplot hledger-mode ivy-bibtex magit-section markdown-mode ob-async org-gtd php-mode pip-requirements pkg-info pygn-mode stripes syslog-mode visual-fill-column whitespace-cleanup-mode yascroll))
  '(python-fill-docstring-style 'pep-257-nn)
  '(python-skeleton-autoinsert t)
  '(recentf-mode t)
