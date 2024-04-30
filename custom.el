@@ -20,7 +20,6 @@
  '(custom-safe-themes
    '("e3c41651565cb624f772d25fbf12752b31610800041968d96c9aef5a3e8ead8e" default))
  '(cython-default-compile-format "python setup.py build_ext --inplace")
- '(delete-selection-mode t)
  '(dired-mode-hook '(hl-line-mode))
  '(doc-view-scale-internally nil)
  '(emacs-lisp-mode-hook
@@ -72,6 +71,7 @@
        "/[ \11]*DEFVAR_[A-Z_ \11(]+\"\\([^\"]+\\)\"/\\1/" "/[ \11]*DEFVAR_[A-Z_ \11(]+\"[^\"]+\",[ \11]\\([A-Za-z0-9_]+\\)/\\1/"))
      (bibtex-dialect . biblatex)))
  '(scroll-bar-mode nil)
+ '(shift-select-mode nil)
  '(show-paren-mode t)
  '(tool-bar-mode nil)
  '(tramp-allow-unsafe-temporary-files t)
