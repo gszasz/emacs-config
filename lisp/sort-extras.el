@@ -1,12 +1,12 @@
-;;; sort-extras.el --- set of functions for sorting
+;;; sort-extras.el --- set of functions for sorting  -*- lexical-binding: t; -*-
 
-;; Copyright (C) 2023 Gabriel Szász
+;; Copyright (C) 2023, 2024 Gabriel Szász
 ;; Based on code at Emacs Wiki:
 ;; <https://www.emacswiki.org/emacs/SortWords>
 ;;   Copyright (C) 2019 Noam Postavsky
 
 ;; Author: Gabriel Szász
-;; Version: 1.0
+;; Version: 1.1
 
 ;; SPDX-License-Identifier: GPL-3.0-or-later
 

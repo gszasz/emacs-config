@@ -1,9 +1,9 @@
-;;; set-fill-column.el --- functions to quick set ‘fill-column’ value
+;;; set-fill-column.el --- functions to quick set ‘fill-column’ value  -*- lexical-binding: t; -*-
 
 ;; Copyright (C) 2022-2024 Gabriel Szász
 
 ;; Author: Gabriel Szász
-;; Version: 2.1
+;; Version: 2.2
 
 ;; SPDX-License-Identifier: GPL-3.0-or-later
 

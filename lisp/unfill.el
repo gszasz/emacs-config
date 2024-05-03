@@ -1,13 +1,13 @@
-;;; unfill.el --- set of functions for unfilling paragraphs
+;;; unfill.el --- set of functions for unfilling paragraphs  -*- lexical-binding: t; -*-
 
-;; Copyright (C) 2016-2017, 2022 Gabriel Szász
+;; Copyright (C) 2016-2017, 2022, 2024 Gabriel Szász
 ;; Based on code at Emacs Wiki:
 ;; <https://www.emacswiki.org/emacs/UnfillParagraph>
 ;;   Copyright (C) 2018 Tom Baker
 ;;   Original Author: Stefan Monnier
 
 ;; Author: Gabriel Szász 
-;; Version: 2.0
+;; Version: 2.1
 
 ;; SPDX-License-Identifier: GPL-3.0-or-later
 

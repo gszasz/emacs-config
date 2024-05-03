@@ -1,9 +1,9 @@
-;;; org-extras.el --- functions to extend org mode
+;;; org-extras.el --- functions to extend org mode  -*- lexical-binding: t; -*-
 
 ;; Copyright (C) 2023-2024 Gabriel Szász
 
 ;; Author: Gabriel Szász
-;; Version: 1.1
+;; Version: 1.2
 
 ;; SPDX-License-Identifier: GPL-3.0-or-later
 

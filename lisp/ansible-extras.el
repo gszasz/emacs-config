@@ -1,9 +1,9 @@
-;;; ansible-extras.el --- functions to extend ‘ansible.el’
+;;; ansible-extras.el --- functions to extend ‘ansible.el’  -*- lexical-binding: t; -*-
 
-;; Copyright (C) 2022 Gabriel Szász
+;; Copyright (C) 2022, 2024 Gabriel Szász
 
 ;; Author: Gabriel Szász
-;; Version: 1.0
+;; Version: 1.1
 
 ;; SPDX-License-Identifier: GPL-3.0-or-later
 
