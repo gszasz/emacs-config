@@ -221,8 +221,7 @@
   :defer t
   :init (advice-add 'python-mode :before 'elpy-enable)
   :custom
-  (elpy-mode-hook '(subword-mode display-fill-column-indicator-mode
-                    set-fill-column-pep8)))
+  (elpy-mode-hook '(subword-mode display-fill-column-indicator-mode)))
 
 ;; PHP mode
 (use-package php-mode

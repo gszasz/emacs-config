@@ -1,6 +1,6 @@
 ;;; set-fill-column.el --- functions to quick set ‘fill-column’ value
 
-;; Copyright (C) 2022-2023 Gabriel Szász
+;; Copyright (C) 2022-2024 Gabriel Szász
 
 ;; Author: Gabriel Szász
 ;; Version: 2.1
@@ -25,7 +25,7 @@
 
 (defun set-fill-column-default ()
   "Set ‘fill-column’ to default value."
-  (set-fill-column 80))
+  (set-fill-column 79))
 
 (defun set-fill-column-lisp ()
   "Set ‘fill-column’ to common value for Lisp programming."

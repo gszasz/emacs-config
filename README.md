@@ -69,8 +69,8 @@ rm ~/.emacs
 * whitespace-cleanup-mode
 * yascroll
 
-You can launch Emacs now and run to install all required MELPA packages
-`M-x package-install-selected-packages<RET>`
+You can launch Emacs now and run to install all required MELPA packages `M-x
+package-install-selected-packages<RET>`
 
 ### Emacs daemon
 
@@ -93,9 +93,9 @@ systemctl --user restart emacs
 # Note on copyright years
 
 In copyright notices where the copyright holder is Gabriel Szász, then where a
-range of years appears, this is an inclusive range that applies to every year in
-the range.  For example: 2005-2008 represents the years 2005, 2006, 2007, and
-2008.
+range of years appears, this is an inclusive range that applies to every year
+in the range.  For example: 2005-2008 represents the years 2005, 2006, 2007,
+and 2008.
 
 # License conditions
 
