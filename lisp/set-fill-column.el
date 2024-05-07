@@ -31,10 +31,6 @@
   "Set ‘fill-column’ to common value for Lisp programming."
   (set-fill-column 70))
 
-(defun set-fill-column-pep8 ()
-  "Set ‘fill-column’ to follow PEP 8 standard."
-  (set-fill-column 79))
-
 (defun set-fill-column-git-commit ()
   "Set ‘fill-column’ to follow the git commit message convention."
   (set-fill-column 72))
