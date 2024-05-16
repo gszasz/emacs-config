@@ -59,6 +59,9 @@
                    ))
   (define-key iso-transl-ctl-x-8-map (kbd (car binding)) (cdr binding)))
 
+;; Activate disabled functions
+(put 'set-goal-column 'disabled nil)
+
 ;; Load my functions
 (add-to-list 'load-path "~/.emacs.d/lisp/")
 (require 'org-extras)
