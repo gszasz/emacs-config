@@ -44,7 +44,7 @@
  '(org-babel-load-languages '((emacs-lisp . t) (shell . t) (python . t)))
  '(org-export-backends '(ascii html icalendar latex md odt))
  '(org-startup-folded nil)
- '(org-tags-column -80)
+ '(org-tags-column -79)
  '(package-archives
    '(("gnu" . "https://elpa.gnu.org/packages/")
      ("melpa" . "https://melpa.org/packages/")))
