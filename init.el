@@ -30,8 +30,18 @@
 
 ;;; Code:
 
+;; Workarounds bug in Fedora 40.  When Emacs frame is maximized to the
+;; left (or right) in GNOME, then after returning back to the
+;; unmaximized frame, the frame is scaled down by 1 column and 1 line
+;; in comparison to the original state.
+(defun resize-current-frame-to-default ()
+  "Resizes current frame to default size."
+  (interactive)
+  (set-frame-size (selected-frame) 80 36))
+
 ;; Global key bindings
 (global-set-key (kbd "M-o") 'other-window)
+(global-set-key (kbd "<f12>") 'resize-current-frame-to-default)
 
 ;; Add Czech/Slovak letters and Euro sign to C-x 8 map
 (dolist (binding '(("vC" . [?Č])
