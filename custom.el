@@ -20,6 +20,7 @@
  '(custom-safe-themes
    '("e3c41651565cb624f772d25fbf12752b31610800041968d96c9aef5a3e8ead8e" default))
  '(cython-default-compile-format "python setup.py build_ext --inplace")
+ '(dictionary-server "dict.org")
  '(dired-mode-hook '(hl-line-mode))
  '(doc-view-scale-internally nil)
  '(emacs-lisp-mode-hook

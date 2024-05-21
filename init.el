@@ -41,6 +41,7 @@
 
 ;; Global key bindings
 (global-set-key (kbd "M-o") 'other-window)
+(global-set-key (kbd "M-#") 'dictionary-lookup-definition)
 (global-set-key (kbd "<f12>") 'resize-current-frame-to-default)
 
 ;; Add Czech/Slovak letters and Euro sign to C-x 8 map
