@@ -91,6 +91,7 @@
 (require 'ansible)
 (require 'jedi)
 (require 'magit)
+(require 'magit-extras)
 
 ;; Configure packages installed via RPM
 
