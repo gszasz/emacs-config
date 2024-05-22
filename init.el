@@ -131,6 +131,12 @@
 
 ;; Load and configure MELPA packages
 
+;; whole-line-or-region
+(use-package whole-line-or-region
+  :ensure t
+  :custom
+  (whole-line-or-region-global-mode t))
+
 ;; whitespace-cleanup-mode
 (use-package whitespace-cleanup-mode
   :ensure t
