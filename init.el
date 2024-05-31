@@ -241,6 +241,16 @@
   :after (flycheck hledger-mode)
   :demand t)
 
+;; Eldoc for Go mode
+(use-package go-eldoc
+  :ensure t)
+
+;; Go mode
+(use-package go-mode
+  :ensure t
+  :custom
+  (go-mode-hook '(go-eldoc-setup)))
+
 ;; ElPy mode
 (use-package elpy
   :ensure t
