@@ -9,6 +9,9 @@
  '(alert-default-style 'libnotify)
  '(before-save-hook '(copyright-update time-stamp))
  '(blink-cursor-mode t)
+ '(calendar-latitude 49.1951)
+ '(calendar-location-name "Brno")
+ '(calendar-longitude 16.6068)
  '(calendar-week-start-day 1)
  '(char-fold-include
    '((34 "＂" "“" "”" "”" "„" "⹂" "〞" "‟" "‟" "❞" "❝" "❠" "“" "„" "〝" "〟" "🙷" "🙶" "🙸" "«" "»")
