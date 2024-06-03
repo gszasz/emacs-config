@@ -186,7 +186,9 @@
 
 ;; gnuplot
 (use-package gnuplot
-  :mode ("\\.plt\\'" . gnuplot-mode))
+  :ensure t
+  :mode ("\\.gp\\'" "\\.gpi\\'" "\\.gnu\\'" "\\.gnuplot\\'"
+         "\\.p\\'" "\\.plot\\'" "\\.plt\\'"))
 
 ;; hledger-mode
 (use-package hledger-mode
