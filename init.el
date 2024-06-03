@@ -249,7 +249,7 @@
 (use-package go-mode
   :ensure t
   :custom
-  (go-mode-hook '(go-eldoc-setup)))
+  (go-mode-hook '(go-eldoc-setup subword-mode gofmt-before-save)))
 
 ;; ElPy mode
 (use-package elpy
