@@ -79,7 +79,8 @@
  '(python-skeleton-autoinsert t)
  '(recentf-mode t)
  '(safe-local-variable-values
-   '((outline-minor-mode-highlight . t)
+   '((org-src-preserve-indentation . t)
+     (outline-minor-mode-highlight . t)
      (outline-minor-mode-cycle . t)
      (eval let
            ((inhibit-read-only t)
