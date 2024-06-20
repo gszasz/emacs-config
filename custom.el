@@ -68,6 +68,7 @@
  '(mouse-autoselect-window t)
  '(org-babel-load-languages '((emacs-lisp . t) (shell . t) (python . t)))
  '(org-export-backends '(ascii html icalendar latex md odt))
+ '(org-latex-toc-command "\\tableofcontents \\clearpage\12\12")
  '(org-startup-folded nil)
  '(org-tags-column -79)
  '(package-archives
