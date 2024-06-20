@@ -80,7 +80,8 @@
  '(python-skeleton-autoinsert t)
  '(recentf-mode t)
  '(safe-local-variable-values
-   '((org-src-preserve-indentation . t)
+   '((org-set-date-header-arg-as-time-stamp . t)
+     (org-src-preserve-indentation . t)
      (outline-minor-mode-highlight . t)
      (outline-minor-mode-cycle . t)
      (eval let
