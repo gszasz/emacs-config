@@ -7,7 +7,7 @@
  '(TeX-save-query nil)
  '(TeX-source-correlate-mode t)
  '(alert-default-style 'libnotify)
- '(before-save-hook '(copyright-update time-stamp))
+ '(before-save-hook '(copyright-update))
  '(blink-cursor-mode t)
  '(calendar-latitude 49.1951)
  '(calendar-location-name "Brno")
@@ -80,7 +80,7 @@
  '(python-skeleton-autoinsert t)
  '(recentf-mode t)
  '(safe-local-variable-values
-   '((org-set-date-header-arg-as-time-stamp . t)
+   '((time-stamp-active . t)
      (org-src-preserve-indentation . t)
      (outline-minor-mode-highlight . t)
      (outline-minor-mode-cycle . t)
