@@ -44,6 +44,9 @@ tramp
 # eww files
 /url
 
+# games files
+/games
+
 # backup files
 *~
 \#*#
