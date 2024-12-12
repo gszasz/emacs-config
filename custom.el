@@ -108,7 +108,8 @@
  '(warning-suppress-log-types '((comp)))
  '(winner-mode t)
  '(yaml-mode-hook
-   '(yaml-set-imenu-generic-expression flyspell-prog-mode whitespace-cleanup-mode smart-ansible-mode)))
+   '(yaml-set-imenu-generic-expression flyspell-prog-mode whitespace-cleanup-mode smart-ansible-mode))
+ '(zotxt-default-bibliography-style "the-astronomy-and-astrophysics-review"))
 (custom-set-faces
  ;; custom-set-faces was added by Custom.
  ;; If you edit it by hand, you could mess it up, so be careful.

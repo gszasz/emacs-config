@@ -116,6 +116,7 @@
 (add-hook 'org-mode-hook #'flyspell-mode)
 (add-hook 'org-mode-hook #'auto-fill-mode)
 (add-hook 'org-mode-hook #'display-fill-column-indicator-mode)
+(add-hook 'org-mode-hook #'org-zotxt-mode)
 (add-hook 'org-mode-hook #'set-date-header-arg-as-time-stamp)
 (add-hook 'org-mode-hook #'setup-table-highlighting)
 (add-hook 'orgtbl-mode-hook #'setup-table-highlighting)
